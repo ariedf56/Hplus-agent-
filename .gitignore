@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.lock
+*.bak-*
+kredensial.json
+.DS_Store

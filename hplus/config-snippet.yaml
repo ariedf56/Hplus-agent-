@@ -1,0 +1,13 @@
+# Tambahan config untuk hplus agent (~/.hermes/config.yaml)
+# Semua opsional — tempel yang dibutuhkan saja.
+
+# 1) Delegasi: tim hplus bisa jalan 5 agen paralel.
+#    Default Hermes 10, jadi ini hanya pengaman bila default berubah.
+delegation:
+  max_concurrent_children: 5
+
+# 2) Skill tim hplus sudah dicopy ke ~/.hermes/skills/ oleh install.sh.
+#    Alternatif tanpa copy (read-only, share antar tool):
+# skills:
+#   external_dirs:
+#     - ~/hplus-agent-full/hplus/skills
