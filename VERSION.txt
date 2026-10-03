@@ -1,2 +1,3 @@
 hermes-agent NousResearch @ 343500b3 (2026-10-04)
 Diunduh: 2026-10-04 | hplus agent v24
+Install.sh mengunci versi ini via --commit (tidak ambil latest).

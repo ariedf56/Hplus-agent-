@@ -14,7 +14,9 @@ Bukan file lepas — tinggal install.
 | `hplus/config-snippet.yaml` | Tambahan config opsional |
 | `install.sh` | Installer otomatis (VPS Linux) |
 
-Versi upstream tercatat di `VERSION.txt`.
+Versi upstream tercatat di `VERSION.txt` DAN dikunci di `install.sh`
+(`--commit 343500b3`) — yang terinstall persis sama dengan yang
+sudah diverifikasi, tidak ada drift versi.
 
 ## Cara pasang (VPS)
 

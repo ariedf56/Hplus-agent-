@@ -10,7 +10,10 @@ say "1/5  Install Hermes resmi (bila belum ada)..."
 if command -v hermes >/dev/null 2>&1; then
   say "Hermes sudah terinstall: $(hermes --version 2>/dev/null || echo ok)"
 else
-  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+  # VERSI DIKUNCI ke commit yang sudah diverifikasi dengan hplus (VERSION.txt).
+  # Ini yang menjamin tidak ada bentrok/drift versi: yang terinstall
+  # byte-identik dengan yang dites.
+  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --commit 343500b3
   export PATH="$HOME/.hermes/bin:$PATH"
 fi
 
