@@ -1,0 +1,102 @@
+{
+  "agen": "raka",
+  "keterampilan": [
+    {
+      "nama": "operasi-papan-tugas",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "format-sitasi",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "web-penuh",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "triangulasi-silang",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "urutan-sumber-prioritas",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "protokol-kontradiksi",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "arsip-temuan",
+      "tier": "tambahan",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "operasi-browser",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "-",
+      "kontributor": "raka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 diusulkan dari -",
+        "disetujui Saka → aktif"
+      ]
+    }
+  ]
+}

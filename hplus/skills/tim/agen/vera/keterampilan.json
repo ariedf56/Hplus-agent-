@@ -1,0 +1,89 @@
+{
+  "agen": "vera",
+  "keterampilan": [
+    {
+      "nama": "operasi-papan-tugas",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "vera",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "format-laporan-verifikasi",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "vera",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "koding-mode-baca-uji",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "vera",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "serangan-kasus-tepi",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "vera",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "checklist-keamanan-kode",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "vera",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "mutation-testing-mindset",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "vera",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "static-analysis-dulu",
+      "tier": "tambahan",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "vera",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    }
+  ]
+}

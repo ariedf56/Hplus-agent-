@@ -1,0 +1,65 @@
+{
+  "agen": "nara",
+  "keterampilan": [
+    {
+      "nama": "operasi-papan-tugas",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "nara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "work-breakdown",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "nara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "analisis-dependensi-risiko",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "nara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "pre-mortem-perencanaan",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "nara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "baca-arsip-rencana",
+      "tier": "tambahan",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "nara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    }
+  ]
+}

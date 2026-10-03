@@ -1,0 +1,89 @@
+{
+  "agen": "tara",
+  "keterampilan": [
+    {
+      "nama": "operasi-papan-tugas",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "tara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "format-laporan-analisis",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "tara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "sinyal-pasar-teruji",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "tara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "konfluensi-pre-mortem",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "tara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "deteksi-regime-dulu",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "tara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "baca-berita-makro",
+      "tier": "tambahan",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "tara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "review-jurnal-paper",
+      "tier": "tambahan",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "tara",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    }
+  ]
+}

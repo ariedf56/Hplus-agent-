@@ -1,0 +1,101 @@
+{
+  "agen": "saka",
+  "keterampilan": [
+    {
+      "nama": "operasi-papan-tugas",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "format-vonis-audit",
+      "tier": "dasar",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "audit-lintas-agen",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "penegakan-komando",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "pengawasan-skill",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "audit-jejak-penuh",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "tren-pelanggaran",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    },
+    {
+      "nama": "hak-veto",
+      "tier": "tambahan",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "bawaan-pack",
+      "kontributor": "saka",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 bawaan pack v14"
+      ]
+    }
+  ]
+}

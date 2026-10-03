@@ -1,0 +1,31 @@
+{
+  "agen": "ari",
+  "keterampilan": [
+    {
+      "nama": "isi-kredensial-aman",
+      "tier": "khusus",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "-",
+      "kontributor": "ari",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 diusulkan dari -",
+        "disetujui Saka → aktif"
+      ]
+    },
+    {
+      "nama": "verifikasi-domain",
+      "tier": "dewa",
+      "versi": 1,
+      "status": "aktif",
+      "dari": "-",
+      "kontributor": "ari",
+      "diperbarui": "2026-10-04",
+      "riwayat": [
+        "v1 diusulkan dari -",
+        "disetujui Saka → aktif"
+      ]
+    }
+  ]
+}

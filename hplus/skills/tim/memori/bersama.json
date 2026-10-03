@@ -1,0 +1,26 @@
+{
+  "agen": "bersama",
+  "memori": [
+    {
+      "id": "M-001",
+      "topik": "Bahasa & gaya user",
+      "isi": "Ari memakai bahasa Indonesia, gaya typo-cepat; ingin jawaban langsung dan konkret, tidak bertele-tele.",
+      "jenis": "preferensi",
+      "dibuat": "2026-10-04 02:46"
+    },
+    {
+      "id": "M-002",
+      "topik": "Paper trading dulu",
+      "isi": "Dilarang keras auto-trading uang asli. Jalur aman: validasi paper dulu berminggu-minggu, lalu batas ketat + persetujuan per-trade.",
+      "jenis": "fakta",
+      "dibuat": "2026-10-04 02:46"
+    },
+    {
+      "id": "M-003",
+      "topik": "Pelajaran: Riset tanpa sumber",
+      "isi": "Audit GAGAL oleh saka pada T-001 (raka): klaim tanpa sumber/bukti. Jangan ulangi pola ini.",
+      "jenis": "pelajaran",
+      "dibuat": "2026-10-04 02:46"
+    }
+  ]
+}
