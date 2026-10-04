@@ -2,149 +2,329 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>🏢 Kantor hplus — Mission Control</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🏢 Kantor hplus</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0;
-         display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-  header { display: flex; align-items: center; gap: 12px; padding: 10px 16px;
-           background: #1e293b; border-bottom: 1px solid #334155; }
-  header h1 { font-size: 18px; }
-  header .jam { margin-left: auto; color: #94a3b8; font-variant-numeric: tabular-nums; }
-  .tabs { display: flex; gap: 6px; }
-  .tabs button { background: #334155; color: #e2e8f0; border: 0; border-radius: 8px;
-                 padding: 8px 14px; cursor: pointer; font-size: 14px; }
-  .tabs button.aktif { background: #0ea5e9; }
-  main { display: flex; flex: 1; min-height: 0; }
-  #panggung-wrap { flex: 1; position: relative; min-width: 0; }
-  canvas { width: 100%; height: 100%; display: block; cursor: pointer; }
-  aside { width: 320px; background: #1e293b; border-left: 1px solid #334155;
-          display: flex; flex-direction: column; min-height: 0; }
-  .panel { padding: 10px 12px; border-bottom: 1px solid #334155; }
-  .panel h3 { font-size: 13px; color: #94a3b8; margin-bottom: 8px;
-              text-transform: uppercase; letter-spacing: .5px; }
-  .panel input, .panel select, .panel textarea {
-    width: 100%; background: #0f172a; color: #e2e8f0; border: 1px solid #334155;
-    border-radius: 8px; padding: 8px; margin-bottom: 6px; font-size: 13px; }
-  .panel button.aksi { background: #0ea5e9; color: #fff; border: 0; border-radius: 8px;
-    padding: 8px 12px; cursor: pointer; font-size: 13px; width: 100%; }
-  .panel button.aksi:hover { background: #0284c7; }
-  #chat { flex: 1; overflow-y: auto; padding: 10px 12px; display: flex;
-          flex-direction: column; gap: 8px; min-height: 0; }
-  .msg { background: #0f172a; border-radius: 10px; padding: 8px 10px; font-size: 13px;
-         border: 1px solid #334155; }
-  .msg .dari { font-size: 11px; color: #94a3b8; margin-bottom: 2px; }
-  .msg.user { border-color: #0ea5e9; }
-  .kartu-butuh { background: #451a03; border: 1px solid #f59e0b; border-radius: 10px;
-                 padding: 8px 10px; font-size: 13px; }
-  .kartu-butuh input { margin-top: 6px; }
-  .kartu-butuh button { background: #f59e0b; color: #000; border: 0;
-    border-radius: 8px; padding: 6px 10px; cursor: pointer; margin-top: 4px; }
-  #chat-form { display: flex; gap: 6px; padding: 10px 12px; border-top: 1px solid #334155; }
-  #chat-form input { flex: 1; background: #0f172a; color: #e2e8f0;
-    border: 1px solid #334155; border-radius: 8px; padding: 8px; }
-  #chat-form button { background: #0ea5e9; color: #fff; border: 0;
-    border-radius: 8px; padding: 8px 14px; cursor: pointer; }
-  /* modal */
-  #modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,.6);
-              display: none; align-items: center; justify-content: center; z-index: 10; }
-  #modal { background: #1e293b; border: 1px solid #334155; border-radius: 14px;
-           padding: 20px; width: min(480px, 92vw); max-height: 86vh; overflow-y: auto; }
-  #modal h2 { margin-bottom: 4px; }
-  #modal .peran { color: #94a3b8; font-size: 13px; margin-bottom: 10px; }
-  #modal .tugas-aktif { background: #0f172a; border-radius: 10px; padding: 10px;
-    margin: 10px 0; font-size: 13px; border: 1px solid #334155; }
-  #modal .riwayat { font-size: 12px; color: #94a3b8; margin-top: 10px; }
-  #modal .riwayat div { padding: 3px 0; border-bottom: 1px dashed #334155; }
-  #modal .tombol { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-  #modal .tombol button { border: 0; border-radius: 8px; padding: 8px 12px;
-    cursor: pointer; font-size: 13px; }
-  .b-tutup { background: #334155; color: #fff; }
-  .b-selesai { background: #22c55e; color: #fff; }
-  .b-tunda { background: #f59e0b; color: #000; }
-  .b-beri { background: #0ea5e9; color: #fff; }
-  .b-lulus { background: #22c55e; color: #fff; }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  :root {
+    --bg: #0b1220; --card: #141d33; --card2: #1a2540; --line: #263453;
+    --txt: #eaf0fd; --mut: #8ea1c7; --acc: #38bdf8;
+    --kerja: #22c55e; --butuh: #f59e0b; --tidur: #64748b;
+    --makan: #fb923c; --ngobrol: #c084fc;
+  }
+  html, body { height: 100%; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--txt);
+    display: flex; flex-direction: column;
+    height: 100vh; height: 100dvh; overflow: hidden;
+  }
+  /* ---------- header ---------- */
+  header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; background: rgba(13,20,38,.92);
+    border-bottom: 1px solid var(--line); z-index: 5;
+    backdrop-filter: blur(8px);
+  }
+  header h1 { font-size: 16px; font-weight: 700; letter-spacing: .2px; white-space: nowrap; }
+  .live { display: flex; align-items: center; gap: 6px; font-size: 11px;
+          color: var(--mut); font-weight: 600; }
+  .live i { width: 8px; height: 8px; border-radius: 50%; background: var(--kerja);
+            animation: pulse-dot 1.6s ease-out infinite; }
+  @keyframes pulse-dot { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)} 70%{box-shadow:0 0 0 7px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
+  .jam { margin-left: auto; font-size: 12px; color: var(--mut);
+         font-variant-numeric: tabular-nums; }
+  /* ---------- tabs ---------- */
+  .tabs { display: flex; gap: 8px; padding: 10px 14px 4px; overflow-x: auto;
+          scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs button {
+    flex: 1 0 auto; border: 1px solid var(--line); background: var(--card);
+    color: var(--mut); border-radius: 12px; padding: 9px 14px; font-size: 13px;
+    font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap;
+  }
+  .tabs button.aktif { background: var(--acc); border-color: var(--acc); color: #04121f; }
+  .ringkasan { padding: 6px 16px 2px; font-size: 12px; color: var(--mut); }
+  .ringkasan b { color: var(--txt); }
+  /* ---------- stage ---------- */
+  #stage { flex: 1; min-height: 0; overflow-y: auto; position: relative;
+           padding: 12px 14px 90px; transition: background .4s; }
+  #stage.kantor { background:
+      radial-gradient(600px 200px at 20% -40px, rgba(56,189,248,.14), transparent 60%),
+      radial-gradient(500px 180px at 85% -30px, rgba(56,189,248,.10), transparent 60%),
+      linear-gradient(180deg, #0e2a4d 0%, #0b1220 55%); }
+  #stage.rumah { background:
+      radial-gradient(300px 300px at 85% 10%, rgba(196,181,253,.16), transparent 60%),
+      radial-gradient(2px 2px at 12% 22%, #fff, transparent),
+      radial-gradient(2px 2px at 32% 12%, #fff, transparent),
+      radial-gradient(2px 2px at 58% 28%, #fff, transparent),
+      radial-gradient(2px 2px at 76% 18%, #fff, transparent),
+      linear-gradient(180deg, #241a45 0%, #0b1220 60%); }
+  #stage.kafe { background:
+      radial-gradient(500px 220px at 50% -40px, rgba(251,146,60,.16), transparent 60%),
+      linear-gradient(180deg, #43280f 0%, #0b1220 60%); }
+  .scene-judul { font-size: 15px; font-weight: 700; margin: 2px 2px 12px;
+                 display: flex; align-items: center; gap: 8px; }
+  .scene-judul small { font-weight: 400; color: var(--mut); font-size: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 12px; }
+  @media (min-width: 700px) { .grid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); } }
+  /* ---------- kartu agen ---------- */
+  .agen {
+    position: relative; border: 1px solid var(--line); border-radius: 18px;
+    background: linear-gradient(180deg, var(--card2), var(--card));
+    padding: 16px 10px 12px; cursor: pointer; color: var(--txt);
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    transition: transform .15s, border-color .3s, box-shadow .3s;
+    font-family: inherit; width: 100%; text-align: center;
+  }
+  .agen:active { transform: scale(.97); }
+  .agen.flash { animation: flash .9s; }
+  @keyframes flash { 0%{box-shadow:0 0 0 3px var(--sc,#38bdf8)} 100%{box-shadow:0 0 0 0 transparent} }
+  .a-avatar { position: relative; width: 64px; height: 64px; margin-bottom: 6px; }
+  .a-avatar .emo {
+    width: 64px; height: 64px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; font-size: 30px;
+    background: color-mix(in srgb, var(--w) 18%, #0b1220);
+    border: 2px solid var(--w);
+  }
+  .a-avatar .ring {
+    position: absolute; inset: -2px; border-radius: 50%;
+    border: 2px solid transparent; pointer-events: none;
+  }
+  .st-kerja .a-avatar .ring { border-color: var(--kerja); animation: ring-soft 2s ease-out infinite; }
+  .st-butuh .a-avatar .ring { border-color: var(--butuh); animation: ring-hard 1s ease-out infinite; }
+  .st-tidur { opacity: .75; }
+  @keyframes ring-soft { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.45)} 70%{box-shadow:0 0 0 8px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
+  @keyframes ring-hard { 0%{box-shadow:0 0 0 0 rgba(245,158,11,.6)} 70%{box-shadow:0 0 0 10px rgba(245,158,11,0)} 100%{box-shadow:0 0 0 0 rgba(245,158,11,0)} }
+  .st-kerja .a-avatar .emo { animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+  .a-badge {
+    position: absolute; right: -6px; bottom: -2px; font-size: 20px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,.5));
+  }
+  .st-kerja .a-badge::after { content: ''; }
+  .st-butuh .a-badge { animation: bounce 1s ease-in-out infinite; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+  .st-tidur .a-badge { animation: zzz 3s ease-in-out infinite; }
+  @keyframes zzz { 0%{transform:translateY(0);opacity:.9} 50%{transform:translateY(-6px);opacity:.4} 100%{transform:translateY(0);opacity:.9} }
+  .st-ngobrol .a-badge { animation: pop 1.4s ease-in-out infinite; }
+  @keyframes pop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.25)} }
+  .a-nama { font-size: 14px; font-weight: 700; }
+  .a-peran { font-size: 11px; color: var(--mut); }
+  .a-status { font-size: 11px; font-weight: 700; margin-top: 4px;
+              padding: 3px 10px; border-radius: 20px; background: var(--sc-bg);
+              color: var(--sc); }
+  .st-kerja  { --sc: var(--kerja);  --sc-bg: rgba(34,197,94,.14); }
+  .st-butuh  { --sc: var(--butuh);  --sc-bg: rgba(245,158,11,.16); }
+  .st-tidur  { --sc: var(--tidur);  --sc-bg: rgba(100,116,139,.16); }
+  .st-makan  { --sc: var(--makan);  --sc-bg: rgba(251,146,60,.14); }
+  .st-ngobrol{ --sc: var(--ngobrol); --sc-bg: rgba(192,132,252,.14); }
+  .a-tugas { font-size: 11px; color: var(--mut); margin-top: 6px; line-height: 1.35;
+             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+             overflow: hidden; }
+  .ketik::after { content: ''; animation: dots 1.2s steps(4) infinite; color: var(--kerja); font-weight: 700; }
+  @keyframes dots { 0%{content:''} 25%{content:'.'} 50%{content:'..'} 75%{content:'...'} }
+  .kosong { text-align: center; color: var(--mut); padding: 48px 20px; font-size: 14px; }
+  .kosong .big { font-size: 44px; display: block; margin-bottom: 10px; }
+  /* ---------- FAB ---------- */
+  #fab {
+    position: fixed; right: 16px; bottom: 76px; width: 56px; height: 56px;
+    border-radius: 50%; border: 0; background: var(--acc); color: #04121f;
+    font-size: 26px; font-weight: 700; cursor: pointer; z-index: 6;
+    box-shadow: 0 6px 20px rgba(56,189,248,.4); transition: transform .15s;
+  }
+  #fab:active { transform: scale(.92); }
+  /* ---------- chat bar + sheet ---------- */
+  #chatbar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
+    display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    background: rgba(13,20,38,.96); border-top: 1px solid var(--line);
+    cursor: pointer; backdrop-filter: blur(8px); font-size: 14px; font-weight: 600;
+  }
+  #chatbar .cbadge {
+    margin-left: auto; background: var(--butuh); color: #000; font-size: 11px;
+    font-weight: 700; border-radius: 20px; padding: 3px 10px; display: none;
+    animation: bounce 1s ease-in-out infinite;
+  }
+  #chatbar.ada-butuh { border-top-color: var(--butuh); }
+  #chatbar.ada-butuh .cbadge { display: block; }
+  #chatsheet {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 8; height: 72dvh;
+    background: var(--bg); border-top: 1px solid var(--line);
+    border-radius: 20px 20px 0 0; transform: translateY(102%);
+    transition: transform .28s cubic-bezier(.32,.72,.35,1);
+    display: flex; flex-direction: column; box-shadow: 0 -12px 40px rgba(0,0,0,.5);
+  }
+  #chatsheet.buka { transform: none; }
+  .sheet-handle { padding: 10px; cursor: pointer; text-align: center; }
+  .sheet-handle i { display: block; width: 44px; height: 5px; border-radius: 3px;
+                    background: var(--line); margin: 0 auto; }
+  .sheet-judul { padding: 0 16px 8px; font-size: 15px; font-weight: 700;
+                 display: flex; align-items: center; gap: 8px; }
+  #chat { flex: 1; overflow-y: auto; padding: 4px 16px 12px; display: flex;
+          flex-direction: column; gap: 8px; }
+  .msg { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+         padding: 9px 12px; font-size: 13.5px; line-height: 1.45;
+         animation: masuk .25s ease-out; max-width: 92%; }
+  @keyframes masuk { from{opacity:0; transform:translateY(6px)} to{opacity:1} }
+  .msg .dari { font-size: 11px; color: var(--mut); margin-bottom: 3px; font-weight: 600; }
+  .msg.user { align-self: flex-end; border-color: var(--acc); background: #0e2a44; }
+  .kartu-butuh { background: #2b1a05; border: 1px solid var(--butuh); border-radius: 12px;
+                 padding: 10px 12px; font-size: 13px; animation: masuk .25s; }
+  .kartu-butuh input { width: 100%; margin-top: 8px; background: var(--bg); color: var(--txt);
+    border: 1px solid var(--line); border-radius: 8px; padding: 9px; font-size: 13px; }
+  .kartu-butuh .row { display: flex; gap: 6px; margin-top: 8px; }
+  .kartu-butuh button { flex: 1; border: 0; border-radius: 8px; padding: 9px;
+    font-size: 13px; font-weight: 700; cursor: pointer; }
+  .kb-kirim { background: var(--butuh); color: #000; }
+  .kb-browser { background: var(--card2); color: var(--txt); border: 1px solid var(--line); }
+  #chat-form { display: flex; gap: 8px; padding: 10px 16px;
+               padding-bottom: calc(14px + env(safe-area-inset-bottom));
+               border-top: 1px solid var(--line); }
+  #chat-form input { flex: 1; background: var(--card); color: var(--txt);
+    border: 1px solid var(--line); border-radius: 12px; padding: 11px; font-size: 14px; }
+  #chat-form button { background: var(--acc); color: #04121f; border: 0;
+    border-radius: 12px; padding: 0 18px; font-size: 16px; font-weight: 700; cursor: pointer; }
+  /* ---------- sheet umum (tugas & modal agen) ---------- */
+  .sheet {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9;
+    background: var(--bg); border-top: 1px solid var(--line);
+    border-radius: 20px 20px 0 0; transform: translateY(102%);
+    transition: transform .28s cubic-bezier(.32,.72,.35,1);
+    max-height: 82dvh; display: flex; flex-direction: column;
+    box-shadow: 0 -12px 40px rgba(0,0,0,.5);
+  }
+  .sheet.buka { transform: none; }
+  .sheet-body { overflow-y: auto; padding: 4px 18px 24px; }
+  .sheet-body h2 { font-size: 18px; margin-bottom: 2px; }
+  .sheet-body .peran { color: var(--mut); font-size: 13px; margin-bottom: 12px; }
+  .field { margin-bottom: 10px; }
+  .field label { display: block; font-size: 12px; color: var(--mut); margin-bottom: 5px; font-weight: 600; }
+  .field input, .field select, .field textarea {
+    width: 100%; background: var(--card); color: var(--txt);
+    border: 1px solid var(--line); border-radius: 10px; padding: 11px; font-size: 14px; }
+  .btn-utama { width: 100%; background: var(--acc); color: #04121f; border: 0;
+    border-radius: 12px; padding: 13px; font-size: 15px; font-weight: 700; cursor: pointer; }
+  .tugas-aktif { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px; margin: 10px 0; font-size: 13.5px; line-height: 1.5; }
+  .riwayat { font-size: 12.5px; color: var(--mut); margin-top: 12px; }
+  .riwayat b { color: var(--txt); }
+  .riwayat .ritem { padding: 7px 0; border-bottom: 1px dashed var(--line);
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .riwayat .ritem span { flex: 1; min-width: 140px; }
+  .tombol { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .tombol button { border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
+    font-size: 13.5px; font-weight: 700; }
+  .b-tutup { background: var(--card2); color: var(--txt); }
+  .b-selesai, .b-lulus { background: var(--kerja); color: #04140a; }
+  .b-tunda { background: var(--butuh); color: #000; }
+  .b-beri { background: var(--acc); color: #04121f; }
   .b-gagal { background: #ef4444; color: #fff; }
-  #modal input { width: 100%; background: #0f172a; color: #e2e8f0;
-    border: 1px solid #334155; border-radius: 8px; padding: 8px; margin-top: 6px; }
-  .hint { font-size: 11px; color: #64748b; padding: 6px 16px; }
-  /* browser dalam browser */
-  #browser-view { position: fixed; inset: 0; background: rgba(0,0,0,.85);
-    display: none; z-index: 20; flex-direction: column; padding: 12px; }
-  #browser-bar { display: flex; gap: 6px; align-items: center; margin-bottom: 8px;
-    flex-wrap: wrap; }
-  #browser-bar input { background: #0f172a; color: #e2e8f0; border: 1px solid #334155;
-    border-radius: 8px; padding: 8px; font-size: 13px; }
-  #b-url { flex: 1; min-width: 200px; }
-  #browser-bar button { border: 0; border-radius: 8px; padding: 8px 12px;
-    cursor: pointer; font-size: 13px; background: #334155; color: #fff; }
-  #b-selesai { background: #22c55e !important; }
+  .mini { padding: 6px 10px !important; font-size: 12px !important; }
+  #scrim { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 7;
+           display: none; }
+  #scrim.nyala { display: block; }
+  /* ---------- browser ---------- */
+  #browser-view { position: fixed; inset: 0; background: rgba(4,8,18,.97);
+    display: none; z-index: 30; flex-direction: column; padding: 10px; }
+  #browser-bar { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  #browser-bar b { font-size: 13px; }
+  #browser-bar input { background: var(--card); color: var(--txt); border: 1px solid var(--line);
+    border-radius: 8px; padding: 9px; font-size: 13px; }
+  #b-url { flex: 1; min-width: 140px; }
+  #browser-bar button { border: 0; border-radius: 8px; padding: 9px 11px; cursor: pointer;
+    font-size: 13px; background: var(--card2); color: #fff; font-weight: 600; }
+  #b-selesai { background: var(--kerja) !important; color: #04140a !important; }
   #b-tutup { background: #ef4444 !important; }
   #b-layar-wrap { flex: 1; min-height: 0; display: flex; align-items: center;
-    justify-content: center; background: #000; border-radius: 10px; overflow: hidden; }
+    justify-content: center; background: #000; border-radius: 12px; overflow: hidden; }
   #b-layar { max-width: 100%; max-height: 100%; cursor: crosshair; }
-  #b-status { font-size: 12px; color: #94a3b8; margin-top: 6px; }
-  #b-ketik { width: 220px; }
+  #b-status { font-size: 12px; color: var(--mut); margin-top: 6px; }
+  #b-ketik { width: 150px; }
 </style>
 </head>
 <body>
 <header>
   <h1>🏢 Kantor hplus</h1>
-  <div class="tabs">
-    <button data-tab="kantor" class="aktif">🏢 Kantor</button>
-    <button data-tab="rumah">🏠 Rumah</button>
-    <button data-tab="kafe">☕ Kafe</button>
-  </div>
-  <div class="jam" id="jam">--:--:--</div>
+  <span class="live"><i></i>LIVE</span>
+  <span class="jam" id="jam">--:--:--</span>
 </header>
-<div class="hint">Klik karakter agen untuk detail &amp; aksi. Agen yang menganggur bersantai di Rumah/Kafe. <span id="live">● live</span></div>
-<main>
-  <div id="panggung-wrap"><canvas id="panggung" width="1200" height="620"></canvas></div>
-  <aside>
-    <div class="panel">
-      <h3>📋 Tugas baru</h3>
-      <input id="f-judul" placeholder="cth: riset harga BTC hari ini">
+<div class="tabs" id="tabs">
+  <button data-tab="kantor" class="aktif">🏢 Kantor</button>
+  <button data-tab="rumah">🏠 Rumah</button>
+  <button data-tab="kafe">☕ Kafe</button>
+</div>
+<div class="ringkasan" id="ringkasan"></div>
+
+<main id="stage" class="kantor"></main>
+
+<button id="fab" title="Tugas baru">＋</button>
+
+<div id="chatbar">
+  <span>💬</span><span>Chat tim</span>
+  <span class="cbadge" id="cbadge">0 butuh bantuan</span>
+  <span style="color:var(--mut)">⌃</span>
+</div>
+
+<div id="chatsheet">
+  <div class="sheet-handle" id="chat-handle"><i></i></div>
+  <div class="sheet-judul">💬 Chat tim</div>
+  <div id="chat"></div>
+  <form id="chat-form">
+    <input id="chat-input" placeholder="Tulis perintah / pesan..." autocomplete="off">
+    <button type="submit">➤</button>
+  </form>
+</div>
+
+<div id="scrim"></div>
+
+<div class="sheet" id="tugas-sheet">
+  <div class="sheet-handle" data-tutup="tugas-sheet"><i></i></div>
+  <div class="sheet-body">
+    <h2>📋 Tugas baru</h2>
+    <div class="peran">Buat tugas untuk tim — atau biarkan rute otomatis yang memilih agen.</div>
+    <div class="field"><label>Judul tugas</label>
+      <input id="f-judul" placeholder="cth: riset harga BTC hari ini"></div>
+    <div class="field"><label>Agen</label>
       <select id="f-untuk">
         <option value="">Otomatis (rute ke agen)</option>
-        <option value="nara">Nara 🧭 perencana</option>
-        <option value="koda">Koda 💻 coder</option>
-        <option value="vera">Vera 🧪 verifikator</option>
-        <option value="raka">Raka 🔍 peneliti</option>
-        <option value="tara">Tara 📈 analis pasar</option>
-        <option value="saka">Saka 🛡️ auditor</option>
-        <option value="ari">Ari 🔑 penjaga kredensial</option>
-      </select>
+        <option value="nara">Nara 🧭 — perencana</option>
+        <option value="koda">Koda 💻 — coder</option>
+        <option value="vera">Vera 🧪 — verifikator</option>
+        <option value="raka">Raka 🔍 — peneliti</option>
+        <option value="tara">Tara 📈 — analis pasar</option>
+        <option value="saka">Saka 🛡️ — auditor</option>
+        <option value="ari">Ari 🔑 — penjaga kredensial</option>
+      </select></div>
+    <div class="field"><label>Prioritas</label>
       <select id="f-prioritas">
         <option value="sedang">sedang</option>
         <option value="rendah">rendah</option>
         <option value="tinggi">tinggi</option>
         <option value="mendesak">mendesak</option>
-      </select>
-      <button class="aksi" id="b-tugas">Buat tugas</button>
-    </div>
-    <div class="panel"><h3>💬 Chat tim</h3></div>
-    <div id="chat"></div>
-    <form id="chat-form">
-      <input id="chat-input" placeholder="Tulis perintah / pesan..." autocomplete="off">
-      <button type="submit">➤</button>
-    </form>
-  </aside>
-</main>
+      </select></div>
+    <button class="btn-utama" id="b-tugas">Buat tugas</button>
+  </div>
+</div>
 
-<div id="modal-bg"><div id="modal"></div></div>
+<div class="sheet" id="agen-sheet">
+  <div class="sheet-handle" data-tutup="agen-sheet"><i></i></div>
+  <div class="sheet-body" id="agen-body"></div>
+</div>
 
 <div id="browser-view">
   <div id="browser-bar">
-    <b>🖥️ Browser Tim (bersama)</b>
+    <b>🖥️ Browser Tim</b>
     <input id="b-url" placeholder="https://...">
     <button onclick="bAksi('buka')">Buka</button>
-    <input id="b-ketik" placeholder="Ketik di sini...">
-    <button onclick="bAksi('ketik')">⌨️ Ketik</button>
+    <input id="b-ketik" placeholder="Ketik...">
+    <button onclick="bAksi('ketik')">⌨️</button>
     <button onclick="bAksi('tombol','Enter')">⏎</button>
     <button onclick="bAksi('tombol','Tab')">⇥</button>
     <button onclick="bAksi('tombol','Escape')">✕</button>
-    <button id="b-selesai" onclick="bSelesai()">✅ Selesai, lanjutkan</button>
+    <button id="b-selesai" onclick="bSelesai()">✅ Selesai</button>
     <button id="b-tutup" onclick="tutupBrowser()">Tutup</button>
   </div>
   <div id="b-layar-wrap"><img id="b-layar" alt="memuat layar browser..."></div>
@@ -152,228 +332,139 @@
 </div>
 
 <script>
-const cv = document.getElementById('panggung');
-const ctx = cv.getContext('2d');
 let TAB = 'kantor';
-let AGEN = [];          // dari /api/status
-let POS = {};           // nama -> {x,y,r} untuk klik
-let CHAT_SEEN = 0;
+let AGEN = [];
+let STATE_LAMA = {};
+let BUTUH_N = 0;
 
-document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
-  document.querySelectorAll('.tabs button').forEach(x => x.classList.remove('aktif'));
+const ST_TXT = { kerja: '🔨 kerja', butuh: '🙋 butuh bantuan', tidur: '😴 tidur',
+                 makan: '🍔 makan', ngobrol: '💬 ngobrol' };
+const ST_BADGE = { kerja: '⌨️', butuh: '🙋', tidur: '💤', makan: '☕', ngobrol: '💬' };
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g,
+    c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#tabs button').forEach(x => x.classList.remove('aktif'));
   b.classList.add('aktif'); TAB = b.dataset.tab;
+  document.getElementById('stage').className = TAB;
+  gambar();
 });
 setInterval(() => {
   document.getElementById('jam').textContent = new Date().toLocaleTimeString('id-ID');
 }, 1000);
 
-// ---------- API ----------
 async function api(path, method, body) {
   const o = { method: method || 'GET', headers: {'Content-Type': 'application/json'} };
   if (body) o.body = JSON.stringify(body);
   const r = await fetch(path, o);
   return r.json();
 }
-async function muatStatus() {
-  try { const d = await api('/api/status'); AGEN = d.agen; } catch(e) {}
-}
-async function muatChat() {
-  try {
-    const d = await api('/api/chat');
-    gambarChat(d.chat, d.butuh);
-  } catch(e) {}
-}
 
-// ---------- gambar ----------
-function rr(x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x+r, y);
-  ctx.arcTo(x+w, y, x+w, y+h, r); ctx.arcTo(x+w, y+h, x, y+h, r);
-  ctx.arcTo(x, y+h, x, y, r); ctx.arcTo(x, y, x+w, y, r);
-  ctx.closePath();
+/* ---------- stage ---------- */
+function kartu(a) {
+  const flash = STATE_LAMA[a.nama] && STATE_LAMA[a.nama] !== a.state ? ' flash' : '';
+  STATE_LAMA[a.nama] = a.state;
+  const tugas = a.tugas ? `<div class="a-tugas">${esc(a.tugas.judul)}</div>` : '';
+  const ketik = a.state === 'kerja' ? '<span class="ketik"></span>' : '';
+  return `<button class="agen st-${a.state}${flash}" style="--w:${a.warna}" data-nama="${a.nama}">
+    <span class="a-avatar"><span class="emo">${a.avatar}<i class="ring"></i></span>
+      <span class="a-badge">${ST_BADGE[a.state] || '💤'}</span></span>
+    <span class="a-nama">${esc(a.tampil)}</span>
+    <span class="a-peran">${esc(a.peran)}</span>
+    <span class="a-status">${ST_TXT[a.state] || a.state}${ketik}</span>
+    ${tugas}</button>`;
 }
-function teks(str, x, y, size, warna, align) {
-  ctx.font = size + 'px system-ui'; ctx.fillStyle = warna || '#e2e8f0';
-  ctx.textAlign = align || 'center'; ctx.fillText(str, x, y);
-}
-
-function gambarKarakter(a, x, y, t, aksi) {
-  const bob = Math.sin(t/450 + x) * 4;
-  POS[a.nama] = {x, y: y-40, r: 46};
-  // bayangan
-  ctx.fillStyle = 'rgba(0,0,0,.25)';
-  ctx.beginPath(); ctx.ellipse(x, y+34, 34, 10, 0, 0, 7); ctx.fill();
-  // badan
-  ctx.fillStyle = a.warna;
-  rr(x-28, y-30+bob*0.4, 56, 62, 14); ctx.fill();
-  // kepala
-  ctx.fillStyle = '#f2c99b';
-  ctx.beginPath(); ctx.arc(x, y-52+bob*0.5, 22, 0, 7); ctx.fill();
-  // mata
-  const tidur = aksi === 'tidur';
-  ctx.fillStyle = '#0f172a';
-  if (tidur) {
-    ctx.fillRect(x-12, y-56+bob*0.5, 10, 2); ctx.fillRect(x+2, y-56+bob*0.5, 10, 2);
-  } else {
-    ctx.beginPath(); ctx.arc(x-7, y-56+bob*0.5, 3, 0, 7); ctx.fill();
-    ctx.beginPath(); ctx.arc(x+7, y-56+bob*0.5, 3, 0, 7); ctx.fill();
-  }
-  // avatar emoji melayang
-  ctx.font = '30px system-ui'; ctx.textAlign = 'center';
-  ctx.fillText(a.avatar, x, y-82 + Math.sin(t/600 + x)*4);
-  // label nama
-  teks(a.tampil, x, y+52, 13, '#cbd5e1');
-  if (a.tugas && (aksi === 'kerja' || aksi === 'butuh')) {
-    const j = a.tugas.judul || '';
-    teks((j.length > 26 ? j.slice(0, 26) + '…' : j), x, y+68, 11, '#94a3b8');
-  }
-  // efek per aksi
-  if (aksi === 'kerja') {
-    // ketikan: titik-titik
-    const n = Math.floor(t/300) % 4;
-    teks('⌨️' + '.'.repeat(n), x+44, y-10, 14, '#94a3b8', 'left');
-  } else if (aksi === 'butuh') {
-    teks('🙋', x+40, y-70 + Math.sin(t/400)*5, 26, '#fff');
-  } else if (aksi === 'tidur') {
-    const n = Math.floor(t/800) % 3;
-    teks('💤'.repeat(n+1), x+34, y-80 - (t/40 % 20), 18, '#fff', 'left');
-  } else if (aksi === 'makan') {
-    teks('🍔☕', x, y-88 + Math.sin(t/500)*4, 22, '#fff');
-  } else if (aksi === 'ngobrol') {
-    if (Math.floor(t/1200) % 2 === 0) teks('💬', x+38, y-72, 22, '#fff');
-  }
-}
-
-function meja(x, y) {
-  ctx.fillStyle = '#8b5a2b'; rr(x-70, y, 140, 14, 5); ctx.fill();
-  ctx.fillStyle = '#6b4423';
-  ctx.fillRect(x-62, y+14, 10, 40); ctx.fillRect(x+52, y+14, 10, 40);
-  // monitor
-  ctx.fillStyle = '#1e293b'; rr(x-24, y-46, 48, 36, 4); ctx.fill();
-  ctx.fillStyle = '#0ea5e9'; rr(x-20, y-42, 40, 28, 3); ctx.fill();
-  ctx.fillStyle = '#334155'; ctx.fillRect(x-4, y-10, 8, 10);
-}
-function tempatTidur(x, y) {
-  ctx.fillStyle = '#7c3aed'; rr(x-70, y-6, 140, 26, 8); ctx.fill();
-  ctx.fillStyle = '#a78bfa'; rr(x-70, y-22, 44, 20, 8); ctx.fill(); // bantal
-  ctx.fillStyle = '#5b21b6'; ctx.fillRect(x-70, y+20, 10, 26); ctx.fillRect(x+60, y+20, 10, 26);
-}
-function mejaKafe(x, y) {
-  ctx.fillStyle = '#b45309'; ctx.beginPath(); ctx.arc(x, y, 46, 0, 7); ctx.fill();
-  ctx.fillStyle = '#92400e'; ctx.fillRect(x-6, y, 12, 44);
-  teks('☕', x-18, y-8, 20, '#fff'); teks('🍰', x+18, y-8, 20, '#fff');
-}
-
-function latar(t) {
-  const W = 1200, H = 620;
-  if (TAB === 'kantor') {
-    ctx.fillStyle = '#1e3a5f'; ctx.fillRect(0, 0, W, 400);       // dinding
-    ctx.fillStyle = '#2c4a73'; ctx.fillRect(0, 400, W, 220);      // lantai
-    teks('🏢 KANTOR HERMES', W/2, 60, 30, '#7dd3fc');
-    // jendela
-    ctx.fillStyle = '#0ea5e9';
-    for (let i = 0; i < 4; i++) { rr(80 + i*290, 110, 180, 120, 8); ctx.fill(); }
-    ctx.fillStyle = 'rgba(255,255,255,.25)';
-    for (let i = 0; i < 4; i++) { rr(90 + i*290, 120, 70, 100, 6); ctx.fill(); }
-  } else if (TAB === 'rumah') {
-    ctx.fillStyle = '#3b2f4a'; ctx.fillRect(0, 0, W, 400);
-    ctx.fillStyle = '#2d2440'; ctx.fillRect(0, 400, W, 220);
-    teks('🏠 RUMAH — agen beristirahat', W/2, 60, 28, '#c4b5fd');
-    teks('🌙', 1050, 120, 60, '#fff');
-  } else {
-    ctx.fillStyle = '#4a2f1d'; ctx.fillRect(0, 0, W, 400);
-    ctx.fillStyle = '#3a2415'; ctx.fillRect(0, 400, W, 220);
-    teks('☕ KAFE — santai & ngobrol', W/2, 60, 28, '#fdba74');
-  }
-}
-
-function render(t) {
-  ctx.clearRect(0, 0, 1200, 620);
-  POS = {};
-  latar(t);
+function gambar() {
+  const st = document.getElementById('stage');
   const diKantor = AGEN.filter(a => a.state === 'kerja' || a.state === 'butuh');
   const diRumah  = AGEN.filter(a => a.state === 'tidur');
   const diKafe   = AGEN.filter(a => a.state === 'makan' || a.state === 'ngobrol');
-  if (TAB === 'kantor') {
-    diKantor.forEach((a, i) => {
-      const x = 1200/(diKantor.length+1) * (i+1);
-      meja(x, 470);
-      gambarKarakter(a, x, 430, t, a.state);
-    });
-    if (!diKantor.length) teks('Semua agen sedang bersantai 🏖️ — cek Rumah / Kafe', 600, 330, 22, '#94a3b8');
-  } else if (TAB === 'rumah') {
-    diRumah.forEach((a, i) => {
-      const x = 1200/(diRumah.length+1) * (i+1);
-      tempatTidur(x, 430);
-      gambarKarakter(a, x-30, 430, t, 'tidur');
-    });
-    if (!diRumah.length) teks('Tidak ada yang tidur saat ini 😴', 600, 330, 22, '#94a3b8');
-  } else {
-    diKafe.forEach((a, i) => {
-      const x = 1200/(diKafe.length+1) * (i+1);
-      mejaKafe(x, 440);
-      gambarKarakter(a, x + (a.state === 'ngobrol' && i % 2 ? 52 : -52), 400, t, a.state);
-    });
-    if (!diKafe.length) teks('Kafe sepi ☕', 600, 330, 22, '#94a3b8');
-  }
-  requestAnimationFrame(render);
+  const k = diKantor.length, t = diRumah.length, f = diKafe.length;
+  document.getElementById('ringkasan').innerHTML =
+    `<b>${k}</b> kerja · <b>${diKantor.filter(a=>a.state==='butuh').length}</b> butuh bantuan · <b>${t+f}</b> santai`;
+  const JUDUL = { kantor: ['🏢 Kantor', 'ruang kerja tim'],
+                  rumah: ['🏠 Rumah', 'agen beristirahat'],
+                  kafe: ['☕ Kafe', 'santai & ngobrol'] };
+  const KOSONG = { kantor: ['🪑', 'Semua agen sedang bersantai — cek Rumah / Kafe'],
+                   rumah: ['😴', 'Tidak ada yang tidur saat ini'],
+                   kafe: ['☕', 'Kafe sepi'] };
+  let daftar;
+  if (TAB === 'kantor') daftar = diKantor;
+  else if (TAB === 'rumah') daftar = diRumah;
+  else daftar = diKafe;
+  let h = `<div class="scene-judul">${JUDUL[TAB][0]} <small>${JUDUL[TAB][1]}</small></div>`;
+  h += daftar.length
+    ? `<div class="grid">${daftar.map(kartu).join('')}</div>`
+    : `<div class="kosong"><span class="big">${KOSONG[TAB][0]}</span>${KOSONG[TAB][1]}</div>`;
+  st.innerHTML = h;
+  st.querySelectorAll('.agen').forEach(el => el.onclick = () => bukaModal(el.dataset.nama));
+}
+async function muatStatus() {
+  try { const d = await api('/api/status'); AGEN = d.agen || []; gambar(); }
+  catch(e) {}
 }
 
-// ---------- klik agen → modal ----------
-cv.addEventListener('click', async (e) => {
-  const r = cv.getBoundingClientRect();
-  const x = (e.clientX - r.left) * (1200 / r.width);
-  const y = (e.clientY - r.top) * (620 / r.height);
-  for (const nama in POS) {
-    const p = POS[nama];
-    if ((x-p.x)**2 + (y-p.y)**2 < p.r*p.r) { bukaModal(nama); return; }
-  }
-});
+/* ---------- sheets ---------- */
+const scrim = document.getElementById('scrim');
+function bukaSheet(id) {
+  document.getElementById(id).classList.add('buka');
+  scrim.classList.add('nyala');
+}
+function tutupSheets() {
+  document.querySelectorAll('.sheet.buka, #chatsheet.buka').forEach(s => s.classList.remove('buka'));
+  scrim.classList.remove('nyala');
+}
+scrim.onclick = tutupSheets;
+document.querySelectorAll('[data-tutup]').forEach(h =>
+  h.onclick = () => tutupSheets());
+document.getElementById('fab').onclick = () => bukaSheet('tugas-sheet');
+document.getElementById('chatbar').onclick = () => bukaSheet('chatsheet');
+document.getElementById('chat-handle').onclick = () => tutupSheets();
 
+/* ---------- modal agen ---------- */
 async function bukaModal(nama) {
   const d = await api('/api/agen/' + nama);
-  const m = document.getElementById('modal');
-  const st = {kerja:'🔨 kerja', butuh:'🙋 butuh bantuan', tidur:'😴 tidur',
-              makan:'🍔 makan', ngobrol:'💬 ngobrol'}[d.state] || d.state;
-  let h = `<h2>${d.info.tampil}</h2><div class="peran">${d.info.peran} · status: ${st}</div>`;
-  const jalan = d.tugas.find(t => t.status === 'jalan');
+  const m = document.getElementById('agen-body');
+  let h = `<h2>${esc(d.info.tampil)}</h2>
+    <div class="peran">${esc(d.info.peran)} · status: ${ST_TXT[d.state] || d.state}</div>`;
+  const jalan = (d.tugas || []).find(t => t.status === 'jalan');
   if (jalan) {
-    h += `<div class="tugas-aktif">📌 <b>${jalan.judul}</b> [${jalan.prioritas}]<br>
-          ${jalan.detail ? '📝 ' + jalan.detail.slice(0, 200) : ''}</div>`;
+    h += `<div class="tugas-aktif">📌 <b>${esc(jalan.judul)}</b> [${esc(jalan.prioritas)}]<br>
+          ${jalan.detail ? '📝 ' + esc(jalan.detail.slice(0, 200)) : ''}</div>`;
     if (jalan.minta_bantuan)
-      h += `<div class="kartu-butuh">🙋 Minta ke <b>${jalan.minta_bantuan.ke}</b>:
-            ${jalan.minta_bantuan.pesan}<br>
+      h += `<div class="kartu-butuh">🙋 Minta ke <b>${esc(jalan.minta_bantuan.ke)}</b>:
+            ${esc(jalan.minta_bantuan.pesan)}<br>
             <input id="m-beri" placeholder="Tulis bantuan/jawaban...">
-            <button onclick="aksiModal('${jalan.id}','beri')">Kirim bantuan</button></div>`;
+            <div class="row"><button class="kb-kirim" onclick="aksiModal('${jalan.id}','beri')">Kirim bantuan</button></div></div>`;
     h += `<div class="tombol">
       <button class="b-selesai" onclick="aksiModal('${jalan.id}','selesai')">✅ Selesai</button>
       <button class="b-tunda" onclick="aksiModal('${jalan.id}','tunda')">⏳ Tunda</button></div>`;
   } else h += `<div class="tugas-aktif">💤 Tidak ada tugas berjalan.</div>`;
-  const selesai = d.tugas.filter(t => t.status === 'selesai').slice(-3).reverse();
+  const selesai = (d.tugas || []).filter(t => t.status === 'selesai').slice(-3).reverse();
   if (selesai.length) {
     h += `<div class="riwayat"><b>Audit tugas terakhir:</b>`;
     selesai.forEach(t => {
       const a = (t.audit || []).map(x => `${x.vonis === 'lulus' ? '✅' : '❌'} ${x.vonis}`).join(', ');
-      h += `<div>${t.id} ${t.judul.slice(0, 40)} ${a ? '· ' + a : '· ⏳ belum diaudit'}
-        <button class="b-lulus" onclick="auditModal('${t.id}','lulus')">Lulus</button>
-        <button class="b-gagal" onclick="auditModal('${t.id}','gagal')">Gagal</button></div>`;
+      h += `<div class="ritem"><span>${t.id} ${esc(t.judul.slice(0, 40))} ${a ? '· ' + a : '· ⏳ belum diaudit'}</span>
+        <button class="b-lulus mini" onclick="auditModal('${t.id}','lulus')">Lulus</button>
+        <button class="b-gagal mini" onclick="auditModal('${t.id}','gagal')">Gagal</button></div>`;
     });
     h += `</div>`;
   }
-  const riw = d.tugas.slice(-5).reverse();
+  const riw = (d.tugas || []).slice(-5).reverse();
   h += `<div class="riwayat"><b>Riwayat tugas:</b>` +
-       riw.map(t => `<div>${t.id} [${t.status}] ${t.judul.slice(0, 45)}</div>`).join('') + `</div>`;
-  h += `<div class="riwayat"><b>Skill aktif (${d.skill.filter(s => s.status === 'aktif').length}):</b> ` +
-       d.skill.filter(s => s.status === 'aktif').slice(0, 8).map(s => s.nama).join(', ') + `</div>`;
-  h += `<div class="tombol"><button class="b-beri" onclick="bukaBrowser()">🖥️ Buka browser tim</button>`;
-  h += `<button class="b-tutup" onclick="tutupModal()">Tutup</button></div>`;
+       riw.map(t => `<div class="ritem"><span>${t.id} [${t.status}] ${esc(t.judul.slice(0, 45))}</span></div>`).join('') + `</div>`;
+  const aktif = (d.skill || []).filter(s => s.status === 'aktif');
+  h += `<div class="riwayat"><b>Skill aktif (${aktif.length}):</b> ` +
+       esc(aktif.slice(0, 8).map(s => s.nama).join(', ')) + `</div>`;
+  h += `<div class="tombol"><button class="b-beri" onclick="bukaBrowser()">🖥️ Buka browser tim</button>
+        <button class="b-tutup" onclick="tutupSheets()">Tutup</button></div>`;
   m.innerHTML = h;
-  document.getElementById('modal-bg').style.display = 'flex';
+  bukaSheet('agen-sheet');
 }
-function tutupModal() { document.getElementById('modal-bg').style.display = 'none'; }
-document.getElementById('modal-bg').addEventListener('click', e => {
-  if (e.target.id === 'modal-bg') tutupModal();
-});
 async function aksiModal(id, aksi) {
   const body = { aksi, id };
   if (aksi === 'beri') {
@@ -390,32 +481,39 @@ async function aksiModal(id, aksi) {
     body.alasan = v;
   }
   await api('/api/aksi', 'POST', body);
-  tutupModal(); muatStatus();
+  tutupSheets(); muatStatus();
 }
 async function auditModal(id, vonis) {
   const c = vonis === 'gagal' ? prompt('Catatan perbaikan wajib:') : prompt('Catatan (opsional):');
   if (c === null) return;
   await api('/api/aksi', 'POST', { aksi: 'audit', id, vonis, catatan: c });
-  tutupModal(); muatStatus();
+  tutupSheets(); muatStatus();
 }
 
-// ---------- chat ----------
+/* ---------- chat ---------- */
 function gambarChat(log, butuh) {
   const el = document.getElementById('chat');
   let h = '';
   (butuh || []).forEach(b => {
-    h += `<div class="kartu-butuh">🙋 <b>${b.untuk}</b> butuh bantuanmu:<br>${b.pesan}
+    h += `<div class="kartu-butuh">🙋 <b>${esc(b.untuk)}</b> butuh bantuanmu:<br>${esc(b.pesan)}
       <input id="butuh-${b.id}" placeholder="Tulis jawaban (OTP/kode)...">
-      <button onclick="jawabButuh('${b.id}')">Kirim</button>
-      <button onclick="bukaBrowser('${b.id}')">🖥️ Kerjakan langsung di browser</button></div>`;
+      <div class="row"><button class="kb-kirim" onclick="jawabButuh('${b.id}')">Kirim</button>
+      <button class="kb-browser" onclick="bukaBrowser('${b.id}')">🖥️ Browser</button></div></div>`;
   });
   (log || []).forEach(m => {
     h += `<div class="msg ${m.dari === 'user' ? 'user' : ''}">
-          <div class="dari">${m.dari === 'user' ? '🧑 Kamu' : '🤖 Komandan'} · ${m.pada || ''}</div>
-          ${m.teks}</div>`;
+          <div class="dari">${m.dari === 'user' ? '🧑 Kamu' : '🤖 Komandan'} · ${esc(m.pada || '')}</div>
+          ${esc(m.teks)}</div>`;
   });
   el.innerHTML = h;
   el.scrollTop = el.scrollHeight;
+  BUTUH_N = (butuh || []).length;
+  const bar = document.getElementById('chatbar');
+  bar.classList.toggle('ada-butuh', BUTUH_N > 0);
+  document.getElementById('cbadge').textContent = BUTUH_N + ' butuh bantuan';
+}
+async function muatChat() {
+  try { const d = await api('/api/chat'); gambarChat(d.chat, d.butuh); } catch(e) {}
 }
 async function jawabButuh(id) {
   const v = document.getElementById('butuh-' + id).value.trim();
@@ -432,7 +530,7 @@ document.getElementById('chat-form').addEventListener('submit', async (e) => {
   muatChat(); muatStatus();
 });
 
-// ---------- tugas baru ----------
+/* ---------- tugas baru ---------- */
 document.getElementById('b-tugas').addEventListener('click', async () => {
   const judul = document.getElementById('f-judul').value.trim();
   if (!judul) return alert('Tulis judul tugas dulu.');
@@ -441,24 +539,23 @@ document.getElementById('b-tugas').addEventListener('click', async () => {
   if (u) body.untuk = u;
   const d = await api('/api/tugas', 'POST', body);
   document.getElementById('f-judul').value = '';
+  tutupSheets();
   alert(d.ok ? `Tugas dibuat untuk ${d.untuk} ✅` : ('Gagal: ' + (d.error || d.keluaran)));
   muatStatus();
 });
 
-// ---------- browser dalam browser (milik TIM, semua agen) ----------
-let B_TIMER = null;
-let B_TUGAS_ID = null;   // id tugas butuh yang sedang dibantu
+/* ---------- browser tim ---------- */
+let B_TIMER = null, B_TUGAS_ID = null;
 async function bukaBrowser(taskId) {
   B_TUGAS_ID = taskId || null;
   document.getElementById('browser-view').style.display = 'flex';
-  tutupModal();
-  await bStatus();
+  tutupSheets();
+  bStatus();
   const img = document.getElementById('b-layar');
   const segarkan = () => { img.src = '/api/browser/layar?t=' + Date.now(); };
   segarkan();
   clearInterval(B_TIMER);
   B_TIMER = setInterval(segarkan, 1500);
-  bStatus();
 }
 function tutupBrowser() {
   clearInterval(B_TIMER);
@@ -467,12 +564,9 @@ function tutupBrowser() {
 async function bStatus() {
   try {
     const d = await api('/api/browser/status');
-    document.getElementById('b-status').textContent =
-      d.url ? ('🌐 ' + d.url) : 'browser siap';
+    document.getElementById('b-status').textContent = d.url ? ('🌐 ' + d.url) : 'browser siap';
     if (d.url) document.getElementById('b-url').value = d.url;
-  } catch(e) {
-    document.getElementById('b-status').textContent = '⚠️ ' + (e.message || 'gagal');
-  }
+  } catch(e) { document.getElementById('b-status').textContent = '⚠️ gagal terhubung'; }
 }
 async function bAksi(aksi, arg) {
   const body = { aksi };
@@ -485,23 +579,17 @@ async function bAksi(aksi, arg) {
     if (!v) return alert('Tulis teks dulu.');
     body.teks = v;
     document.getElementById('b-ketik').value = '';
-  } else if (aksi === 'tombol') {
-    body.tombol = arg;
-  }
+  } else if (aksi === 'tombol') body.tombol = arg;
   const d = await api('/api/browser/aksi', 'POST', body);
   if (d.error) alert(d.error);
   bStatus();
 }
 document.getElementById('b-layar').addEventListener('click', async (e) => {
-  const img = e.target;
-  const r = img.getBoundingClientRect();
-  // koordinat natural vs tampil: pakai fraksi agar skala aman
-  const x = (e.clientX - r.left) / r.width;
-  const y = (e.clientY - r.top) / r.height;
+  const r = e.target.getBoundingClientRect();
+  const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
   await api('/api/browser/aksi', 'POST', { aksi: 'klik_xy', x, y });
 });
 async function bSelesai() {
-  // beri jawaban pada tugas butuh yang sedang dibantu (agen mana pun)
   let bid = B_TUGAS_ID;
   if (!bid) {
     const d = await api('/api/chat');
@@ -516,11 +604,10 @@ async function bSelesai() {
   tutupBrowser(); muatChat(); muatStatus();
 }
 
-// ---------- loop ----------
+/* ---------- loop ---------- */
 muatStatus(); muatChat();
 setInterval(muatStatus, 3000);
 setInterval(muatChat, 3000);
-requestAnimationFrame(render);
 </script>
 </body>
 </html>
