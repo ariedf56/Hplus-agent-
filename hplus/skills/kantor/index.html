@@ -70,6 +70,12 @@
   /* ================= DIORAMA 3D (semua ruangan) ================= */
   .diorama { position: relative; width: 100%; border-radius: 16px;
     overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+  .diorama-wrap { overflow-x: auto; border-radius: 16px; touch-action: pan-y;
+    cursor: grab; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+  .diorama-wrap:active { cursor: grabbing; }
+  .diorama.kantor { width: 720px; max-width: none; }
+  .geser-hint { text-align: center; font-size: 11px; color: var(--mut);
+    margin-top: 6px; }
   .room-bg { position: absolute; inset: 0; background-size: cover;
     background-position: center; }
   .diorama .kosong { position: absolute; inset: 0; display: flex;
@@ -480,7 +486,7 @@ let STATE_LAMA = {};
 let SIG = '', SIG_CHAT = '';
 
 const ST_TXT = { kerja: '🔨 kerja', butuh: '🙋 butuh bantuan', tidur: '😴 tidur',
-                 makan: '🍔 makan', ngobrol: '💬 ngobrol' };
+                 makan: '🍔 makan', ngobrol: '💬 ngobrol', patroli: '🛡️ patroli' };
 function esc(s) {
   return String(s == null ? '' : s).replace(/[&<>"']/g,
     c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -491,6 +497,7 @@ document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => {
   document.querySelectorAll('#tabs button').forEach(x => x.classList.remove('aktif'));
   b.classList.add('aktif'); TAB = b.dataset.tab;
   document.getElementById('stage').className = TAB;
+  if (TAB === 'kantor') PUSAT_KANTOR = true;
   gambar();
 });
 setInterval(() => {
@@ -565,6 +572,7 @@ function charHTML(a, room, i) {
   else if (a.state === 'kerja' && nT) bub = `<span class="mini-bub">📋${nT}</span>`;
   else if (a.state === 'ngobrol') bub = '<span class="chatpop">💬</span>';
   else if (a.state === 'makan') bub = '<span class="mini-bub">☕</span>';
+  else if (a.state === 'patroli') bub = '<span class="mini-bub">🛡️ patroli</span>';
   else if (a.state === 'tidur') bub = '<span class="zzz">💤</span>';
   return `<button class="char st-${a.state}${bebas ? ' bebas' : ''}${flash}" data-nama="${a.nama}" data-room="${room}"
       style="--w:${a.warna};left:${p.x}%;top:${p.y}%">${bub}
@@ -596,21 +604,23 @@ function dioramaHTML(room, daftar) {
   const JUDUL = { kantor: ['🏢 Kantor', 'hplus OFFICE'],
                   rumah: ['🏠 Rumah', 'agen beristirahat'],
                   kafe: ['☕ Kafe', 'santai & ngobrol'] };
+  const KOSONG = { kantor: 'Belum ada yang bekerja — buat tugas lewat tombol ＋',
+                   rumah: 'Tidak ada yang tidur saat ini', kafe: 'Kafe sepi' };
   let h = `<div class="scene-judul">${JUDUL[room][0]} <small>${JUDUL[room][1]}</small></div>`;
-  h += `<div class="diorama" style="aspect-ratio:${ROOM_ASPECT[room]}">` +
-       `<div class="room-bg ${ROOM_BG[room]}"></div>`;
-  if (daftar.length) {
-    h += daftar.map((a, i) => charHTML(a, room, i)).join('');
-  } else {
-    const KOSONG = { kantor: 'Belum ada yang bekerja — buat tugas lewat tombol ＋',
-                     rumah: 'Tidak ada yang tidur saat ini', kafe: 'Kafe sepi' };
-    h += `<div class="kosong"><span class="big">💤</span>${KOSONG[room]}</div>`;
-  }
-  return h + `</div>`;
+  const inner = `<div class="diorama ${room}" style="aspect-ratio:${ROOM_ASPECT[room]}">` +
+       `<div class="room-bg ${ROOM_BG[room]}"></div>` +
+    (daftar.length
+      ? daftar.map((a, i) => charHTML(a, room, i)).join('')
+      : `<div class="kosong"><span class="big">💤</span>${KOSONG[room]}</div>`) +
+    `</div>`;
+  h += room === 'kantor'
+    ? `<div class="diorama-wrap">${inner}</div><div class="geser-hint">← geser untuk jelajah kantor →</div>`
+    : inner;
+  return h;
 }
 function gambar() {
   const st = document.getElementById('stage');
-  const diKantor = AGEN.filter(a => a.state === 'kerja' || a.state === 'butuh');
+  const diKantor = AGEN.filter(a => a.state === 'kerja' || a.state === 'butuh' || a.state === 'patroli');
   const diRumah  = AGEN.filter(a => a.state === 'tidur');
   const diKafe   = AGEN.filter(a => a.state === 'makan' || a.state === 'ngobrol');
   const nButuh = diKantor.filter(a => a.state === 'butuh').length;
@@ -618,8 +628,29 @@ function gambar() {
     `<b>${diKantor.length}</b> di kantor · <b>${nButuh}</b> butuh bantuan · <b>${diRumah.length + diKafe.length}</b> santai`;
   const daftar = TAB === 'kantor' ? diKantor : TAB === 'rumah' ? diRumah : diKafe;
   st.innerHTML = dioramaHTML(TAB, daftar);
-  st.querySelectorAll('.char').forEach(el => el.onclick = () => bukaModal(el.dataset.nama));
+  st.querySelectorAll('.char').forEach(el => el.onclick = () => {
+    if (Date.now() - TERAKHIR_GESER < 350) return;  // abaikan klik setelah drag
+    bukaModal(el.dataset.nama);
+  });
+  // drag-to-scroll untuk jelajah kantor (cadangan selain scroll native)
+  st.querySelectorAll('.diorama-wrap').forEach(w => {
+    let sx = 0, sl = 0, seret = false;
+    w.onpointerdown = e => { seret = true; sx = e.clientX; sl = w.scrollLeft; };
+    w.onpointermove = e => {
+      if (!seret) return;
+      const dx = e.clientX - sx;
+      if (Math.abs(dx) > 8) { w.scrollLeft = sl - dx; TERAKHIR_GESER = Date.now(); }
+    };
+    w.onpointerup = w.onpointercancel = w.onpointerleave = () => { seret = false; };
+  });
+  if (PUSAT_KANTOR && TAB === 'kantor') {
+    PUSAT_KANTOR = false;
+    const w = st.querySelector('.diorama-wrap');
+    const c = st.querySelector('.char');
+    if (w && c) w.scrollLeft = Math.max(0, c.offsetLeft - w.clientWidth / 2 + 20);
+  }
 }
+let TERAKHIR_GESER = 0, PUSAT_KANTOR = true;
 async function muatStatus() {
   try {
     const d = await api('/api/status');

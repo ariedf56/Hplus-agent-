@@ -216,6 +216,11 @@ def state_agen():
             h["state"] = st
             if dg:
                 h["dengan"] = tampil[dg]
+    # Saka supervisor: saat menganggur ia patroli keliling kantor
+    for h in hasil:
+        if h["nama"] == "saka" and h["state"] in ("ngobrol", "tidur", "makan"):
+            h["state"] = "patroli"
+            h.pop("dengan", None)
     return hasil
 
 
