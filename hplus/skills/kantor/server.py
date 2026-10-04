@@ -68,19 +68,29 @@ def simpan_chat(log):
 
 
 def state_agen():
-    """Turunkan state live tiap agen dari papan tugas."""
+    """Turunkan state live tiap agen dari papan tugas.
+
+    Agen dengan tugas 'antri' ATAU 'jalan' dianggap BEKERJA di kantor
+    (ditugaskan = sudah di meja kerja). 'antri' = menunggu dikerjakan,
+    'jalan' = sedang dikerjakan.
+    """
     data = tim.baca()
+    tampil = {}
     hasil = []
     menganggur = []
     for nama in AGEN_ORDER:
         info = muat_agen(nama)
+        tampil[nama] = info["tampil"]
         jalan = [t for t in data["tugas"]
                  if t["untuk"] == nama and t["status"] == "jalan"]
+        antri = [t for t in data["tugas"]
+                 if t["untuk"] == nama and t["status"] == "antri"]
         butuh = [t for t in jalan if t.get("minta_bantuan")]
-        tugas = jalan[0] if jalan else None
+        semua = jalan + antri
+        tugas = jalan[0] if jalan else (semua[0] if semua else None)
         if butuh:
             st, ket = "butuh", butuh[0]
-        elif tugas:
+        elif semua:
             st, ket = "kerja", tugas
         else:
             st, ket = "santai", None
@@ -89,6 +99,8 @@ def state_agen():
             "nama": nama, "tampil": info["tampil"], "avatar": info["avatar"],
             "warna": info["warna"], "peran": info["peran"],
             "state": st, "tugas": ket,
+            "tugas_semua": [{"id": t["id"], "judul": t["judul"],
+                             "status": t["status"]} for t in semua],
         })
     # --- ambient: yang santai disebar ke rumah/kafe (deterministik per jam)
     # ngobrol berpasangan, sisanya tidur/makan
@@ -97,15 +109,17 @@ def state_agen():
     peta = {}
     for i, nama in enumerate(menganggur):
         if i % 2 == 0 and i + 1 < len(menganggur):
-            peta[nama] = "ngobrol"
+            peta[nama] = ("ngobrol", menganggur[i + 1])
         else:
-            peta[nama] = ["tidur", "makan"][(acak >> i) % 2]
-    # pasangan ngobrol: samakan state keduanya
+            peta[nama] = (["tidur", "makan"][(acak >> i) % 2], None)
     for i in range(0, len(menganggur) - 1, 2):
-        peta[menganggur[i + 1]] = "ngobrol"
+        peta[menganggur[i + 1]] = ("ngobrol", menganggur[i])
     for h in hasil:
         if h["state"] == "santai":
-            h["state"] = peta[h["nama"]]
+            st, dg = peta[h["nama"]]
+            h["state"] = st
+            if dg:
+                h["dengan"] = tampil[dg]
     return hasil
 
 

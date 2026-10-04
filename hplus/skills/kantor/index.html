@@ -19,40 +19,35 @@
     display: flex; flex-direction: column;
     height: 100vh; height: 100dvh; overflow: hidden;
   }
-  /* ---------- header ---------- */
-  header {
-    display: flex; align-items: center; gap: 10px;
-    padding: 10px 14px; background: rgba(13,20,38,.92);
-    border-bottom: 1px solid var(--line); z-index: 5;
-    backdrop-filter: blur(8px);
-  }
-  header h1 { font-size: 16px; font-weight: 700; letter-spacing: .2px; white-space: nowrap; }
+  header { display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+    background: rgba(13,20,38,.92); border-bottom: 1px solid var(--line); z-index: 5;
+    backdrop-filter: blur(8px); }
+  header h1 { font-size: 16px; font-weight: 700; white-space: nowrap; }
   .live { display: flex; align-items: center; gap: 6px; font-size: 11px;
-          color: var(--mut); font-weight: 600; }
+    color: var(--mut); font-weight: 600; }
   .live i { width: 8px; height: 8px; border-radius: 50%; background: var(--kerja);
-            animation: pulse-dot 1.6s ease-out infinite; }
+    animation: pulse-dot 1.6s ease-out infinite; }
   @keyframes pulse-dot { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)} 70%{box-shadow:0 0 0 7px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
-  .jam { margin-left: auto; font-size: 12px; color: var(--mut);
-         font-variant-numeric: tabular-nums; }
-  /* ---------- tabs ---------- */
-  .tabs { display: flex; gap: 8px; padding: 10px 14px 4px; overflow-x: auto;
-          scrollbar-width: none; }
+  .jam { margin-left: auto; font-size: 12px; color: var(--mut); font-variant-numeric: tabular-nums; }
+  .tabs { display: flex; gap: 8px; padding: 10px 14px 4px; overflow-x: auto; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
-  .tabs button {
-    flex: 1 0 auto; border: 1px solid var(--line); background: var(--card);
+  .tabs button { flex: 1 0 auto; border: 1px solid var(--line); background: var(--card);
     color: var(--mut); border-radius: 12px; padding: 9px 14px; font-size: 13px;
-    font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap;
-  }
+    font-weight: 600; cursor: pointer; transition: all .2s; white-space: nowrap; }
   .tabs button.aktif { background: var(--acc); border-color: var(--acc); color: #04121f; }
   .ringkasan { padding: 6px 16px 2px; font-size: 12px; color: var(--mut); }
   .ringkasan b { color: var(--txt); }
-  /* ---------- stage ---------- */
+
+  /* ================= STAGE ================= */
   #stage { flex: 1; min-height: 0; overflow-y: auto; position: relative;
-           padding: 12px 14px 90px; transition: background .4s; }
+    padding: 12px 14px 90px; transition: background .4s; }
   #stage.kantor { background:
-      radial-gradient(600px 200px at 20% -40px, rgba(56,189,248,.14), transparent 60%),
-      radial-gradient(500px 180px at 85% -30px, rgba(56,189,248,.10), transparent 60%),
-      linear-gradient(180deg, #0e2a4d 0%, #0b1220 55%); }
+      radial-gradient(500px 140px at 50% -30px, rgba(125,211,252,.10), transparent 70%),
+      linear-gradient(180deg, #152a4e 0 58%, #43301d 58% 100%); }
+  #stage.kantor::before { content: ''; position: absolute; top: 64px; left: 0; right: 0;
+    height: 96px; pointer-events: none; opacity: .8;
+    background: repeating-linear-gradient(90deg, transparent 0 34px,
+      rgba(125,211,252,.16) 34px 148px, transparent 148px 182px); }
   #stage.rumah { background:
       radial-gradient(300px 300px at 85% 10%, rgba(196,181,253,.16), transparent 60%),
       radial-gradient(2px 2px at 12% 22%, #fff, transparent),
@@ -64,115 +59,181 @@
       radial-gradient(500px 220px at 50% -40px, rgba(251,146,60,.16), transparent 60%),
       linear-gradient(180deg, #43280f 0%, #0b1220 60%); }
   .scene-judul { font-size: 15px; font-weight: 700; margin: 2px 2px 12px;
-                 display: flex; align-items: center; gap: 8px; }
+    display: flex; align-items: center; gap: 8px; position: relative; }
   .scene-judul small { font-weight: 400; color: var(--mut); font-size: 12px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-          gap: 12px; }
-  @media (min-width: 700px) { .grid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); } }
-  /* ---------- kartu agen ---------- */
-  .agen {
-    position: relative; border: 1px solid var(--line); border-radius: 18px;
-    background: linear-gradient(180deg, var(--card2), var(--card));
-    padding: 16px 10px 12px; cursor: pointer; color: var(--txt);
-    display: flex; flex-direction: column; align-items: center; gap: 2px;
-    transition: transform .15s, border-color .3s, box-shadow .3s;
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 12px; position: relative; }
+  @media (min-width: 700px) { .grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } }
+  .kosong { text-align: center; color: var(--mut); padding: 48px 20px; font-size: 14px; position: relative; }
+  .kosong .big { font-size: 44px; display: block; margin-bottom: 10px; }
+
+  /* ================= WORKSTATION (kantor) ================= */
+  .ws { position: relative; border: 1px solid var(--line); border-radius: 18px;
+    background: linear-gradient(180deg, rgba(26,37,64,.95), rgba(20,29,51,.95));
+    padding: 10px 8px 10px; cursor: pointer; color: var(--txt);
+    display: flex; flex-direction: column; align-items: center;
     font-family: inherit; width: 100%; text-align: center;
-  }
-  .agen:active { transform: scale(.97); }
-  .agen.flash { animation: flash .9s; }
-  @keyframes flash { 0%{box-shadow:0 0 0 3px var(--sc,#38bdf8)} 100%{box-shadow:0 0 0 0 transparent} }
-  .a-avatar { position: relative; width: 64px; height: 64px; margin-bottom: 6px; }
-  .a-avatar .emo {
-    width: 64px; height: 64px; border-radius: 50%; display: flex;
-    align-items: center; justify-content: center; font-size: 30px;
-    background: color-mix(in srgb, var(--w) 18%, #0b1220);
-    border: 2px solid var(--w);
-  }
-  .a-avatar .ring {
-    position: absolute; inset: -2px; border-radius: 50%;
-    border: 2px solid transparent; pointer-events: none;
-  }
-  .st-kerja .a-avatar .ring { border-color: var(--kerja); animation: ring-soft 2s ease-out infinite; }
-  .st-butuh .a-avatar .ring { border-color: var(--butuh); animation: ring-hard 1s ease-out infinite; }
-  .st-tidur { opacity: .75; }
-  @keyframes ring-soft { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.45)} 70%{box-shadow:0 0 0 8px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
-  @keyframes ring-hard { 0%{box-shadow:0 0 0 0 rgba(245,158,11,.6)} 70%{box-shadow:0 0 0 10px rgba(245,158,11,0)} 100%{box-shadow:0 0 0 0 rgba(245,158,11,0)} }
-  .st-kerja .a-avatar .emo { animation: bob 2.4s ease-in-out infinite; }
-  @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
-  .a-badge {
-    position: absolute; right: -6px; bottom: -2px; font-size: 20px;
-    filter: drop-shadow(0 2px 3px rgba(0,0,0,.5));
-  }
-  .st-kerja .a-badge::after { content: ''; }
-  .st-butuh .a-badge { animation: bounce 1s ease-in-out infinite; }
-  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
-  .st-tidur .a-badge { animation: zzz 3s ease-in-out infinite; }
-  @keyframes zzz { 0%{transform:translateY(0);opacity:.9} 50%{transform:translateY(-6px);opacity:.4} 100%{transform:translateY(0);opacity:.9} }
-  .st-ngobrol .a-badge { animation: pop 1.4s ease-in-out infinite; }
-  @keyframes pop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.25)} }
-  .a-nama { font-size: 14px; font-weight: 700; }
-  .a-peran { font-size: 11px; color: var(--mut); }
-  .a-status { font-size: 11px; font-weight: 700; margin-top: 4px;
-              padding: 3px 10px; border-radius: 20px; background: var(--sc-bg);
-              color: var(--sc); }
-  .st-kerja  { --sc: var(--kerja);  --sc-bg: rgba(34,197,94,.14); }
-  .st-butuh  { --sc: var(--butuh);  --sc-bg: rgba(245,158,11,.16); }
-  .st-tidur  { --sc: var(--tidur);  --sc-bg: rgba(100,116,139,.16); }
-  .st-makan  { --sc: var(--makan);  --sc-bg: rgba(251,146,60,.14); }
-  .st-ngobrol{ --sc: var(--ngobrol); --sc-bg: rgba(192,132,252,.14); }
-  .a-tugas { font-size: 11px; color: var(--mut); margin-top: 6px; line-height: 1.35;
-             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-             overflow: hidden; }
+    transition: transform .15s, box-shadow .3s; }
+  .ws:active { transform: scale(.97); }
+  .ws.flash { animation: flash .9s; }
+  @keyframes flash { 0%{box-shadow:0 0 0 3px var(--acc)} 100%{box-shadow:0 0 0 0 transparent} }
+  .st-butuh.ws { border-color: var(--butuh); animation: ws-alert 1.2s ease-in-out infinite; }
+  @keyframes ws-alert { 50% { box-shadow: 0 0 18px rgba(245,158,11,.35); } }
+
+  /* gelembung daftar tugas */
+  .bubble { position: relative; background: #f1f5f9; color: #0f172a; border-radius: 12px;
+    padding: 7px 10px; font-size: 11px; line-height: 1.45; text-align: left;
+    width: 100%; margin-bottom: 8px; }
+  .bubble::after { content: ''; position: absolute; bottom: -6px; left: 50%;
+    transform: translateX(-50%); border: 6px solid transparent;
+    border-top-color: #f1f5f9; border-bottom: 0; }
+  .bubble b { font-size: 11px; }
+  .bubble .antri-tag { color: #b45309; font-weight: 700; }
+  .bubble.butuh-b { background: #fef3c7; border: 1px solid var(--butuh); }
+  .bubble.butuh-b::after { border-top-color: #fef3c7; }
+
+  /* orang duduk di kursi + meja + komputer (tampak samping) */
+  .side { display: flex; align-items: flex-end; justify-content: center; margin: 2px 0; }
+  .sitter { position: relative; width: 58px; height: 78px; }
+  .kursi { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scaleX(-1);
+    font-size: 42px; }
+  .orang { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+    font-size: 36px; animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-3px)} }
+  .st-butuh .orang { animation: bounce .9s ease-in-out infinite; }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
+  .ketik-ico { position: absolute; bottom: 30px; left: 62%; font-size: 15px;
+    animation: tap .45s ease-in-out infinite; }
+  @keyframes tap { 50% { transform: translateY(2px); } }
+  .st-butuh .ketik-ico { display: none; }
+  .angkat { position: absolute; bottom: 44px; left: 60%; font-size: 22px; display: none;
+    animation: bounce .8s ease-in-out infinite; }
+  .st-butuh .angkat { display: block; }
+  .mejax { display: flex; flex-direction: column; align-items: center; margin-left: -6px; }
+  .monitor { width: 76px; background: #1e293b; border: 3px solid #0b1120;
+    border-radius: 8px; padding: 4px; box-shadow: 0 4px 12px rgba(0,0,0,.45); }
+  .mstand { width: 8px; height: 9px; background: #334155; }
+  .mbase { width: 36px; height: 5px; background: #334155; border-radius: 3px; }
+  .meja-top { width: 148px; height: 10px; margin-top: 3px;
+    background: linear-gradient(180deg, #b07a2e, #7c4a12); border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.4); }
+
+  /* layar monitor — animasi live per agen */
+  .layar { position: relative; height: 50px; background: #050a18; border-radius: 4px; overflow: hidden; }
+  .st-butuh .layar { background: #2b1a05; }
+  .st-butuh .layar::after { content: '!'; position: absolute; inset: 0; display: flex;
+    align-items: center; justify-content: center; font-size: 26px; font-weight: 800;
+    color: var(--butuh); animation: blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+  .code { position: absolute; inset: 6px;
+    background: repeating-linear-gradient(180deg, transparent 0 4px, rgba(74,222,128,.55) 4px 6px, transparent 6px 11px);
+    background-size: 70% 100%; animation: codescroll 2.6s linear infinite; }
+  .code::after { content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(180deg, transparent 0 4px, rgba(74,222,128,.35) 4px 6px, transparent 6px 11px);
+    background-size: 45% 100%; background-position: 22px 0; animation: codescroll 3.7s linear infinite; }
+  @keyframes codescroll { to { background-position: 0 22px; } }
+  .cursor { position: absolute; left: 8px; bottom: 6px; width: 7px; height: 10px;
+    background: #4ade80; animation: blink 1s steps(2) infinite; }
+  .radar { position: absolute; inset: 5px; border-radius: 50%;
+    border: 1px solid rgba(34,197,94,.4);
+    background: conic-gradient(rgba(34,197,94,.8), transparent 25%);
+    animation: spin 2.4s linear infinite; }
+  .rdot { position: absolute; left: 62%; top: 32%; width: 5px; height: 5px;
+    border-radius: 50%; background: #4ade80; animation: blink 1.2s infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .chart { position: absolute; inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); }
+  .chart polyline { fill: none; stroke: #38bdf8; stroke-width: 2.5; stroke-linecap: round;
+    stroke-dasharray: 130; stroke-dashoffset: 130; animation: draw 3.2s ease-in-out infinite; }
+  @keyframes draw { 0%{stroke-dashoffset:130} 55%{stroke-dashoffset:0} 100%{stroke-dashoffset:0} }
+  .kompas { position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; font-size: 26px; animation: spin 7s linear infinite; }
+  .lab i { position: absolute; bottom: 5px; width: 6px; height: 6px; border-radius: 50%;
+    background: #67e8f9; animation: rise 2.2s ease-in infinite; }
+  .lab i:nth-child(1){left:32%} .lab i:nth-child(2){left:52%;animation-delay:.7s}
+  .lab i:nth-child(3){left:66%;animation-delay:1.3s}
+  @keyframes rise { to { transform: translateY(-32px); opacity: 0; } }
+  .shield, .key { position: absolute; inset: 0; display: flex; align-items: center;
+    justify-content: center; font-size: 26px; }
+  .shield { animation: shieldp 2s ease-in-out infinite; }
+  @keyframes shieldp { 50% { transform: scale(1.18); } }
+  .key::after { content: ''; position: absolute; inset: -4px;
+    background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%);
+    background-size: 220% 100%; animation: shine 2.8s linear infinite; }
+  @keyframes shine { to { background-position: -220% 0; } }
+
+  .ws-nama { font-size: 14px; font-weight: 700; margin-top: 6px; }
+  .ws-peran { font-size: 11px; color: var(--mut); }
+  .ws-status { font-size: 11px; font-weight: 700; margin-top: 4px; padding: 3px 10px;
+    border-radius: 20px; background: var(--sc-bg); color: var(--sc); }
+  .st-kerja { --sc: var(--kerja); --sc-bg: rgba(34,197,94,.14); }
+  .st-butuh { --sc: var(--butuh); --sc-bg: rgba(245,158,11,.16); }
+  .st-tidur { --sc: var(--tidur); --sc-bg: rgba(100,116,139,.16); }
+  .st-makan { --sc: var(--makan); --sc-bg: rgba(251,146,60,.14); }
+  .st-ngobrol { --sc: var(--ngobrol); --sc-bg: rgba(192,132,252,.14); }
   .ketik::after { content: ''; animation: dots 1.2s steps(4) infinite; color: var(--kerja); font-weight: 700; }
   @keyframes dots { 0%{content:''} 25%{content:'.'} 50%{content:'..'} 75%{content:'...'} }
-  .kosong { text-align: center; color: var(--mut); padding: 48px 20px; font-size: 14px; }
-  .kosong .big { font-size: 44px; display: block; margin-bottom: 10px; }
-  /* ---------- FAB ---------- */
-  #fab {
-    position: fixed; right: 16px; bottom: 76px; width: 56px; height: 56px;
+
+  /* ================= KAFE ================= */
+  .meja-kafe { width: 76px; height: 76px; border-radius: 50%; margin: 8px auto 0;
+    background: radial-gradient(circle at 35% 30%, #c07a2e, #7c4a12);
+    position: relative; box-shadow: 0 6px 14px rgba(0,0,0,.45); }
+  .cup { position: absolute; font-size: 20px; animation: steam 3s ease-in-out infinite; }
+  .cup.c1 { left: 12px; top: 14px; } .cup.c2 { right: 12px; top: 22px; animation-delay: 1.2s; }
+  @keyframes steam { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+  .ngobrol-pop { position: absolute; top: -14px; right: 6px; font-size: 20px;
+    animation: pop 1.6s ease-in-out infinite; }
+  @keyframes pop { 0%,100%{transform:scale(1)} 50%{transform:scale(1.3)} }
+  .duduk-kafe { font-size: 34px; margin-top: -8px; animation: bob 3s ease-in-out infinite; }
+
+  /* ================= RUMAH ================= */
+  .bed { width: 120px; height: 60px; margin: 10px auto 0; position: relative; }
+  .mattress { position: absolute; left: 0; right: 0; bottom: 8px; height: 26px;
+    background: linear-gradient(180deg, #7c3aed, #5b21b6); border-radius: 10px; }
+  .pillow { position: absolute; left: 8px; bottom: 26px; width: 30px; height: 20px;
+    background: #e9d5ff; border-radius: 8px; }
+  .sleeper { position: absolute; left: 40px; bottom: 24px; font-size: 28px;
+    animation: nap 4s ease-in-out infinite; }
+  @keyframes nap { 0%,100%{transform:translateY(0)} 50%{transform:translateY(2px)} }
+  .blanket { position: absolute; right: 6px; bottom: 8px; width: 52px; height: 26px;
+    background: linear-gradient(180deg, #a78bfa, #7c3aed); border-radius: 8px 10px 10px 8px; }
+  .zzz { position: absolute; top: -4px; right: 12px; font-size: 20px;
+    animation: zzz 3s ease-in-out infinite; }
+  @keyframes zzz { 0%{transform:translateY(0);opacity:.9} 50%{transform:translateY(-8px);opacity:.35} 100%{transform:translateY(0);opacity:.9} }
+
+  /* ================= FAB / chat / sheets ================= */
+  #fab { position: fixed; right: 16px; bottom: 76px; width: 56px; height: 56px;
     border-radius: 50%; border: 0; background: var(--acc); color: #04121f;
     font-size: 26px; font-weight: 700; cursor: pointer; z-index: 6;
-    box-shadow: 0 6px 20px rgba(56,189,248,.4); transition: transform .15s;
-  }
+    box-shadow: 0 6px 20px rgba(56,189,248,.4); }
   #fab:active { transform: scale(.92); }
-  /* ---------- chat bar + sheet ---------- */
-  #chatbar {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
+  #chatbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
     display: flex; align-items: center; gap: 10px; padding: 12px 16px;
     padding-bottom: calc(12px + env(safe-area-inset-bottom));
     background: rgba(13,20,38,.96); border-top: 1px solid var(--line);
-    cursor: pointer; backdrop-filter: blur(8px); font-size: 14px; font-weight: 600;
-  }
-  #chatbar .cbadge {
-    margin-left: auto; background: var(--butuh); color: #000; font-size: 11px;
+    cursor: pointer; backdrop-filter: blur(8px); font-size: 14px; font-weight: 600; }
+  #chatbar .cbadge { margin-left: auto; background: var(--butuh); color: #000; font-size: 11px;
     font-weight: 700; border-radius: 20px; padding: 3px 10px; display: none;
-    animation: bounce 1s ease-in-out infinite;
-  }
+    animation: bounce2 1s ease-in-out infinite; }
+  @keyframes bounce2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
   #chatbar.ada-butuh { border-top-color: var(--butuh); }
   #chatbar.ada-butuh .cbadge { display: block; }
-  #chatsheet {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 8; height: 72dvh;
-    background: var(--bg); border-top: 1px solid var(--line);
-    border-radius: 20px 20px 0 0; transform: translateY(102%);
-    transition: transform .28s cubic-bezier(.32,.72,.35,1);
-    display: flex; flex-direction: column; box-shadow: 0 -12px 40px rgba(0,0,0,.5);
-  }
+  #chatsheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 8; height: 72dvh;
+    background: var(--bg); border-top: 1px solid var(--line); border-radius: 20px 20px 0 0;
+    transform: translateY(102%); transition: transform .28s cubic-bezier(.32,.72,.35,1);
+    display: flex; flex-direction: column; box-shadow: 0 -12px 40px rgba(0,0,0,.5); }
   #chatsheet.buka { transform: none; }
   .sheet-handle { padding: 10px; cursor: pointer; text-align: center; }
   .sheet-handle i { display: block; width: 44px; height: 5px; border-radius: 3px;
-                    background: var(--line); margin: 0 auto; }
-  .sheet-judul { padding: 0 16px 8px; font-size: 15px; font-weight: 700;
-                 display: flex; align-items: center; gap: 8px; }
+    background: var(--line); margin: 0 auto; }
+  .sheet-judul { padding: 0 16px 8px; font-size: 15px; font-weight: 700; }
   #chat { flex: 1; overflow-y: auto; padding: 4px 16px 12px; display: flex;
-          flex-direction: column; gap: 8px; }
+    flex-direction: column; gap: 8px; }
   .msg { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-         padding: 9px 12px; font-size: 13.5px; line-height: 1.45;
-         animation: masuk .25s ease-out; max-width: 92%; }
-  @keyframes masuk { from{opacity:0; transform:translateY(6px)} to{opacity:1} }
+    padding: 9px 12px; font-size: 13.5px; line-height: 1.45; max-width: 92%; }
   .msg .dari { font-size: 11px; color: var(--mut); margin-bottom: 3px; font-weight: 600; }
   .msg.user { align-self: flex-end; border-color: var(--acc); background: #0e2a44; }
   .kartu-butuh { background: #2b1a05; border: 1px solid var(--butuh); border-radius: 12px;
-                 padding: 10px 12px; font-size: 13px; animation: masuk .25s; }
+    padding: 10px 12px; font-size: 13px; }
   .kartu-butuh input { width: 100%; margin-top: 8px; background: var(--bg); color: var(--txt);
     border: 1px solid var(--line); border-radius: 8px; padding: 9px; font-size: 13px; }
   .kartu-butuh .row { display: flex; gap: 6px; margin-top: 8px; }
@@ -181,52 +242,52 @@
   .kb-kirim { background: var(--butuh); color: #000; }
   .kb-browser { background: var(--card2); color: var(--txt); border: 1px solid var(--line); }
   #chat-form { display: flex; gap: 8px; padding: 10px 16px;
-               padding-bottom: calc(14px + env(safe-area-inset-bottom));
-               border-top: 1px solid var(--line); }
+    padding-bottom: calc(14px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
   #chat-form input { flex: 1; background: var(--card); color: var(--txt);
     border: 1px solid var(--line); border-radius: 12px; padding: 11px; font-size: 14px; }
   #chat-form button { background: var(--acc); color: #04121f; border: 0;
     border-radius: 12px; padding: 0 18px; font-size: 16px; font-weight: 700; cursor: pointer; }
-  /* ---------- sheet umum (tugas & modal agen) ---------- */
-  .sheet {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9;
-    background: var(--bg); border-top: 1px solid var(--line);
-    border-radius: 20px 20px 0 0; transform: translateY(102%);
-    transition: transform .28s cubic-bezier(.32,.72,.35,1);
-    max-height: 82dvh; display: flex; flex-direction: column;
-    box-shadow: 0 -12px 40px rgba(0,0,0,.5);
-  }
+  .sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9;
+    background: var(--bg); border-top: 1px solid var(--line); border-radius: 20px 20px 0 0;
+    transform: translateY(102%); transition: transform .28s cubic-bezier(.32,.72,.35,1);
+    max-height: 84dvh; display: flex; flex-direction: column;
+    box-shadow: 0 -12px 40px rgba(0,0,0,.5); }
   .sheet.buka { transform: none; }
   .sheet-body { overflow-y: auto; padding: 4px 18px 24px; }
   .sheet-body h2 { font-size: 18px; margin-bottom: 2px; }
+  .sheet-body h3 { font-size: 14px; margin: 14px 0 8px; color: var(--mut);
+    text-transform: uppercase; letter-spacing: .4px; }
   .sheet-body .peran { color: var(--mut); font-size: 13px; margin-bottom: 12px; }
   .field { margin-bottom: 10px; }
   .field label { display: block; font-size: 12px; color: var(--mut); margin-bottom: 5px; font-weight: 600; }
-  .field input, .field select, .field textarea {
-    width: 100%; background: var(--card); color: var(--txt);
-    border: 1px solid var(--line); border-radius: 10px; padding: 11px; font-size: 14px; }
+  .field input, .field select, .field textarea { width: 100%; background: var(--card);
+    color: var(--txt); border: 1px solid var(--line); border-radius: 10px;
+    padding: 11px; font-size: 14px; }
   .btn-utama { width: 100%; background: var(--acc); color: #04121f; border: 0;
     border-radius: 12px; padding: 13px; font-size: 15px; font-weight: 700; cursor: pointer; }
-  .tugas-aktif { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 12px; margin: 10px 0; font-size: 13.5px; line-height: 1.5; }
+  .tugas-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 10px 12px; margin-bottom: 8px; font-size: 13px; }
+  .ti-judul { line-height: 1.5; margin-bottom: 8px; }
+  .chip { font-size: 10.5px; font-weight: 700; border-radius: 12px; padding: 2px 8px;
+    text-transform: uppercase; }
+  .chip.antri { background: rgba(245,158,11,.18); color: var(--butuh); }
+  .chip.jalan { background: rgba(34,197,94,.15); color: var(--kerja); }
+  .laporan { background: #0e2a1a; border: 1px solid rgba(34,197,94,.35); border-radius: 12px;
+    padding: 10px 12px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; }
+  .lap-isi { color: var(--mut); font-size: 12.5px; }
   .riwayat { font-size: 12.5px; color: var(--mut); margin-top: 12px; }
   .riwayat b { color: var(--txt); }
-  .riwayat .ritem { padding: 7px 0; border-bottom: 1px dashed var(--line);
-    display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-  .riwayat .ritem span { flex: 1; min-width: 140px; }
-  .tombol { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .tombol { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .tombol button { border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
     font-size: 13.5px; font-weight: 700; }
   .b-tutup { background: var(--card2); color: var(--txt); }
-  .b-selesai, .b-lulus { background: var(--kerja); color: #04140a; }
+  .b-selesai, .b-lulus, .b-ambil { background: var(--kerja); color: #04140a; }
   .b-tunda { background: var(--butuh); color: #000; }
   .b-beri { background: var(--acc); color: #04121f; }
   .b-gagal { background: #ef4444; color: #fff; }
   .mini { padding: 6px 10px !important; font-size: 12px !important; }
-  #scrim { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 7;
-           display: none; }
+  #scrim { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 7; display: none; }
   #scrim.nyala { display: block; }
-  /* ---------- browser ---------- */
   #browser-view { position: fixed; inset: 0; background: rgba(4,8,18,.97);
     display: none; z-index: 30; flex-direction: column; padding: 10px; }
   #browser-bar { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
@@ -257,17 +318,10 @@
   <button data-tab="kafe">☕ Kafe</button>
 </div>
 <div class="ringkasan" id="ringkasan"></div>
-
 <main id="stage" class="kantor"></main>
-
 <button id="fab" title="Tugas baru">＋</button>
-
-<div id="chatbar">
-  <span>💬</span><span>Chat tim</span>
-  <span class="cbadge" id="cbadge">0 butuh bantuan</span>
-  <span style="color:var(--mut)">⌃</span>
-</div>
-
+<div id="chatbar"><span>💬</span><span>Chat tim</span>
+  <span class="cbadge" id="cbadge">0 butuh bantuan</span><span style="color:var(--mut)">⌃</span></div>
 <div id="chatsheet">
   <div class="sheet-handle" id="chat-handle"><i></i></div>
   <div class="sheet-judul">💬 Chat tim</div>
@@ -277,9 +331,7 @@
     <button type="submit">➤</button>
   </form>
 </div>
-
 <div id="scrim"></div>
-
 <div class="sheet" id="tugas-sheet">
   <div class="sheet-handle" data-tutup="tugas-sheet"><i></i></div>
   <div class="sheet-body">
@@ -300,20 +352,16 @@
       </select></div>
     <div class="field"><label>Prioritas</label>
       <select id="f-prioritas">
-        <option value="sedang">sedang</option>
-        <option value="rendah">rendah</option>
-        <option value="tinggi">tinggi</option>
-        <option value="mendesak">mendesak</option>
+        <option value="sedang">sedang</option><option value="rendah">rendah</option>
+        <option value="tinggi">tinggi</option><option value="mendesak">mendesak</option>
       </select></div>
     <button class="btn-utama" id="b-tugas">Buat tugas</button>
   </div>
 </div>
-
 <div class="sheet" id="agen-sheet">
   <div class="sheet-handle" data-tutup="agen-sheet"><i></i></div>
   <div class="sheet-body" id="agen-body"></div>
 </div>
-
 <div id="browser-view">
   <div id="browser-bar">
     <b>🖥️ Browser Tim</b>
@@ -335,16 +383,15 @@
 let TAB = 'kantor';
 let AGEN = [];
 let STATE_LAMA = {};
-let BUTUH_N = 0;
+let SIG = '', SIG_CHAT = '';
 
 const ST_TXT = { kerja: '🔨 kerja', butuh: '🙋 butuh bantuan', tidur: '😴 tidur',
                  makan: '🍔 makan', ngobrol: '💬 ngobrol' };
-const ST_BADGE = { kerja: '⌨️', butuh: '🙋', tidur: '💤', makan: '☕', ngobrol: '💬' };
-
 function esc(s) {
   return String(s == null ? '' : s).replace(/[&<>"']/g,
     c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+function potong(s, n) { s = String(s || ''); return s.length > n ? s.slice(0, n) + '…' : s; }
 
 document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => {
   document.querySelectorAll('#tabs button').forEach(x => x.classList.remove('aktif'));
@@ -355,7 +402,6 @@ document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => {
 setInterval(() => {
   document.getElementById('jam').textContent = new Date().toLocaleTimeString('id-ID');
 }, 1000);
-
 async function api(path, method, body) {
   const o = { method: method || 'GET', headers: {'Content-Type': 'application/json'} };
   if (body) o.body = JSON.stringify(body);
@@ -363,63 +409,127 @@ async function api(path, method, body) {
   return r.json();
 }
 
-/* ---------- stage ---------- */
-function kartu(a) {
+/* ---------- layar monitor per agen ---------- */
+function layarHTML(nama) {
+  switch (nama) {
+    case 'koda': return '<div class="code"></div><div class="cursor"></div>';
+    case 'raka': return '<div class="radar"></div><div class="rdot"></div>';
+    case 'tara': return '<svg class="chart" viewBox="0 0 64 36"><polyline points="2,30 14,26 26,28 38,16 48,18 62,6"/></svg>';
+    case 'nara': return '<div class="kompas">🧭</div>';
+    case 'vera': return '<div class="lab"><i></i><i></i><i></i></div>';
+    case 'saka': return '<div class="shield">🛡️</div>';
+    case 'ari':  return '<div class="key">🔑</div>';
+    default:     return '<div class="code"></div>';
+  }
+}
+/* ---------- gelembung daftar tugas ---------- */
+function bubbleHTML(a) {
+  if (a.state === 'butuh' && a.tugas && a.tugas.minta_bantuan)
+    return `<span class="bubble butuh-b">🙋 <b>Butuh bantuan!</b><br>${esc(potong(a.tugas.minta_bantuan.pesan, 90))}</span>`;
+  const ts = a.tugas_semua || [];
+  if (!ts.length) return '';
+  let h = `<span class="bubble"><b>📋 ${ts.length} tugas</b>`;
+  ts.slice(0, 2).forEach(t => {
+    const tag = t.status === 'antri' ? ' <span class="antri-tag">(antri)</span>' : '';
+    h += `<br>• ${esc(potong(t.judul, 36))}${tag}`;
+  });
+  if (ts.length > 2) h += `<br><i>+${ts.length - 2} lagi</i>`;
+  return h + '</span>';
+}
+/* ---------- kartu workstation (kantor) ---------- */
+function kartuKantor(a) {
   const flash = STATE_LAMA[a.nama] && STATE_LAMA[a.nama] !== a.state ? ' flash' : '';
   STATE_LAMA[a.nama] = a.state;
-  const tugas = a.tugas ? `<div class="a-tugas">${esc(a.tugas.judul)}</div>` : '';
-  const ketik = a.state === 'kerja' ? '<span class="ketik"></span>' : '';
-  return `<button class="agen st-${a.state}${flash}" style="--w:${a.warna}" data-nama="${a.nama}">
-    <span class="a-avatar"><span class="emo">${a.avatar}<i class="ring"></i></span>
-      <span class="a-badge">${ST_BADGE[a.state] || '💤'}</span></span>
-    <span class="a-nama">${esc(a.tampil)}</span>
-    <span class="a-peran">${esc(a.peran)}</span>
-    <span class="a-status">${ST_TXT[a.state] || a.state}${ketik}</span>
-    ${tugas}</button>`;
+  const st = a.state === 'kerja' ? `🔨 kerja<span class="ketik"></span>` : ST_TXT[a.state];
+  return `<button class="ws st-${a.state}${flash}" style="--w:${a.warna}" data-nama="${a.nama}">
+    ${bubbleHTML(a)}
+    <span class="side">
+      <span class="sitter"><span class="kursi">🪑</span><span class="orang">${a.avatar}</span>
+        ${a.state === 'kerja' ? '<span class="ketik-ico">⌨️</span>' : '<span class="angkat">🙋</span>'}</span>
+      <span class="mejax">
+        <span class="monitor"><span class="layar" style="display:block">${layarHTML(a.nama)}</span></span>
+        <span class="mstand"></span><span class="mbase"></span>
+        <span class="meja-top"></span>
+      </span>
+    </span>
+    <span class="ws-nama">${esc(a.tampil)}</span>
+    <span class="ws-peran">${esc(a.peran)}</span>
+    <span class="ws-status">${st}</span>
+  </button>`;
+}
+function kartuKafe(a) {
+  const flash = STATE_LAMA[a.nama] && STATE_LAMA[a.nama] !== a.state ? ' flash' : '';
+  STATE_LAMA[a.nama] = a.state;
+  const dengan = a.dengan ? `<br><i>dengan ${esc(a.dengan)}</i>` : '';
+  return `<button class="ws st-${a.state}${flash}" data-nama="${a.nama}">
+    <span class="bubble">💬 ${ST_TXT[a.state]}${dengan}</span>
+    <span class="duduk-kafe">${a.avatar}</span>
+    <span class="meja-kafe"><span class="cup c1">☕</span><span class="cup c2">☕</span>
+      <span class="ngobrol-pop">💬</span></span>
+    <span class="ws-nama">${esc(a.tampil)}</span>
+    <span class="ws-peran">${esc(a.peran)}</span>
+    <span class="ws-status">${ST_TXT[a.state]}</span>
+  </button>`;
+}
+function kartuRumah(a) {
+  const flash = STATE_LAMA[a.nama] && STATE_LAMA[a.nama] !== a.state ? ' flash' : '';
+  STATE_LAMA[a.nama] = a.state;
+  return `<button class="ws st-${a.state}${flash}" data-nama="${a.nama}">
+    <span class="bed"><span class="zzz">💤</span><span class="pillow"></span>
+      <span class="sleeper">${a.avatar}</span><span class="mattress"></span>
+      <span class="blanket"></span></span>
+    <span class="ws-nama">${esc(a.tampil)}</span>
+    <span class="ws-peran">${esc(a.peran)}</span>
+    <span class="ws-status">${ST_TXT[a.state]}</span>
+  </button>`;
+}
+function sigStage() {
+  return AGEN.map(a => a.nama + ':' + a.state + ':' +
+    JSON.stringify(a.tugas_semua || []) + ':' + (a.dengan || '')).join('|');
 }
 function gambar() {
   const st = document.getElementById('stage');
   const diKantor = AGEN.filter(a => a.state === 'kerja' || a.state === 'butuh');
   const diRumah  = AGEN.filter(a => a.state === 'tidur');
   const diKafe   = AGEN.filter(a => a.state === 'makan' || a.state === 'ngobrol');
-  const k = diKantor.length, t = diRumah.length, f = diKafe.length;
+  const nButuh = diKantor.filter(a => a.state === 'butuh').length;
   document.getElementById('ringkasan').innerHTML =
-    `<b>${k}</b> kerja · <b>${diKantor.filter(a=>a.state==='butuh').length}</b> butuh bantuan · <b>${t+f}</b> santai`;
+    `<b>${diKantor.length}</b> di kantor · <b>${nButuh}</b> butuh bantuan · <b>${diRumah.length + diKafe.length}</b> santai`;
   const JUDUL = { kantor: ['🏢 Kantor', 'ruang kerja tim'],
                   rumah: ['🏠 Rumah', 'agen beristirahat'],
                   kafe: ['☕ Kafe', 'santai & ngobrol'] };
-  const KOSONG = { kantor: ['🪑', 'Semua agen sedang bersantai — cek Rumah / Kafe'],
+  const KOSONG = { kantor: ['🪑', 'Belum ada yang bekerja — buat tugas lewat tombol ＋'],
                    rumah: ['😴', 'Tidak ada yang tidur saat ini'],
                    kafe: ['☕', 'Kafe sepi'] };
-  let daftar;
-  if (TAB === 'kantor') daftar = diKantor;
-  else if (TAB === 'rumah') daftar = diRumah;
-  else daftar = diKafe;
+  let daftar, fn;
+  if (TAB === 'kantor') { daftar = diKantor; fn = kartuKantor; }
+  else if (TAB === 'rumah') { daftar = diRumah; fn = kartuRumah; }
+  else { daftar = diKafe; fn = kartuKafe; }
   let h = `<div class="scene-judul">${JUDUL[TAB][0]} <small>${JUDUL[TAB][1]}</small></div>`;
   h += daftar.length
-    ? `<div class="grid">${daftar.map(kartu).join('')}</div>`
+    ? `<div class="grid">${daftar.map(fn).join('')}</div>`
     : `<div class="kosong"><span class="big">${KOSONG[TAB][0]}</span>${KOSONG[TAB][1]}</div>`;
   st.innerHTML = h;
-  st.querySelectorAll('.agen').forEach(el => el.onclick = () => bukaModal(el.dataset.nama));
+  st.querySelectorAll('.ws').forEach(el => el.onclick = () => bukaModal(el.dataset.nama));
 }
 async function muatStatus() {
-  try { const d = await api('/api/status'); AGEN = d.agen || []; gambar(); }
-  catch(e) {}
+  try {
+    const d = await api('/api/status');
+    const s = (d.agen || []).map(a => a.nama + ':' + a.state + ':' +
+      JSON.stringify(a.tugas_semua || []) + ':' + (a.dengan || '')).join('|');
+    if (s !== SIG) { SIG = s; AGEN = d.agen || []; gambar(); }
+  } catch (e) {}
 }
 
 /* ---------- sheets ---------- */
 const scrim = document.getElementById('scrim');
-function bukaSheet(id) {
-  document.getElementById(id).classList.add('buka');
-  scrim.classList.add('nyala');
-}
+function bukaSheet(id) { document.getElementById(id).classList.add('buka'); scrim.classList.add('nyala'); }
 function tutupSheets() {
   document.querySelectorAll('.sheet.buka, #chatsheet.buka').forEach(s => s.classList.remove('buka'));
   scrim.classList.remove('nyala');
 }
 scrim.onclick = tutupSheets;
-document.querySelectorAll('[data-tutup]').forEach(h =>
-  h.onclick = () => tutupSheets());
+document.querySelectorAll('[data-tutup]').forEach(h => h.onclick = () => tutupSheets());
 document.getElementById('fab').onclick = () => bukaSheet('tugas-sheet');
 document.getElementById('chatbar').onclick = () => bukaSheet('chatsheet');
 document.getElementById('chat-handle').onclick = () => tutupSheets();
@@ -430,33 +540,39 @@ async function bukaModal(nama) {
   const m = document.getElementById('agen-body');
   let h = `<h2>${esc(d.info.tampil)}</h2>
     <div class="peran">${esc(d.info.peran)} · status: ${ST_TXT[d.state] || d.state}</div>`;
-  const jalan = (d.tugas || []).find(t => t.status === 'jalan');
-  if (jalan) {
-    h += `<div class="tugas-aktif">📌 <b>${esc(jalan.judul)}</b> [${esc(jalan.prioritas)}]<br>
-          ${jalan.detail ? '📝 ' + esc(jalan.detail.slice(0, 200)) : ''}</div>`;
-    if (jalan.minta_bantuan)
-      h += `<div class="kartu-butuh">🙋 Minta ke <b>${esc(jalan.minta_bantuan.ke)}</b>:
-            ${esc(jalan.minta_bantuan.pesan)}<br>
-            <input id="m-beri" placeholder="Tulis bantuan/jawaban...">
-            <div class="row"><button class="kb-kirim" onclick="aksiModal('${jalan.id}','beri')">Kirim bantuan</button></div></div>`;
-    h += `<div class="tombol">
-      <button class="b-selesai" onclick="aksiModal('${jalan.id}','selesai')">✅ Selesai</button>
-      <button class="b-tunda" onclick="aksiModal('${jalan.id}','tunda')">⏳ Tunda</button></div>`;
-  } else h += `<div class="tugas-aktif">💤 Tidak ada tugas berjalan.</div>`;
-  const selesai = (d.tugas || []).filter(t => t.status === 'selesai').slice(-3).reverse();
-  if (selesai.length) {
-    h += `<div class="riwayat"><b>Audit tugas terakhir:</b>`;
-    selesai.forEach(t => {
-      const a = (t.audit || []).map(x => `${x.vonis === 'lulus' ? '✅' : '❌'} ${x.vonis}`).join(', ');
-      h += `<div class="ritem"><span>${t.id} ${esc(t.judul.slice(0, 40))} ${a ? '· ' + a : '· ⏳ belum diaudit'}</span>
+  const blm = (d.tugas || []).filter(t => t.status !== 'selesai');
+  const sdh = (d.tugas || []).filter(t => t.status === 'selesai').slice(-3).reverse();
+  h += `<h3>📋 Tugas (${blm.length})</h3>`;
+  if (!blm.length) h += `<div class="tugas-item">💤 Tidak ada tugas.</div>`;
+  blm.forEach(t => {
+    h += `<div class="tugas-item"><div class="ti-judul"><b>${t.id}</b>
+      <span class="chip ${t.status}">${t.status}</span><br>${esc(t.judul)}
+      ${t.detail ? '<br><span style="color:var(--mut)">' + esc(potong(t.detail, 120)) + '</span>' : ''}</div>`;
+    if (t.minta_bantuan)
+      h += `<div class="kartu-butuh" style="margin-bottom:8px">🙋 Minta ke <b>${esc(t.minta_bantuan.ke)}</b>:
+        ${esc(t.minta_bantuan.pesan)}<br><input id="m-beri" placeholder="Tulis bantuan/jawaban...">
+        <div class="row"><button class="kb-kirim" onclick="aksiModal('${t.id}','beri')">Kirim bantuan</button></div></div>`;
+    h += `<div class="tombol">`;
+    if (t.status === 'antri')
+      h += `<button class="b-ambil" onclick="aksiModal('${t.id}','ambil','${nama}')">▶️ Kerjakan</button>`;
+    if (t.status === 'jalan') {
+      h += `<button class="b-selesai" onclick="aksiModal('${t.id}','selesai')">✅ Selesai</button>
+            <button class="b-tunda" onclick="aksiModal('${t.id}','tunda')">⏳ Tunda</button>`;
+    }
+    h += `</div></div>`;
+  });
+  h += `<h3>📣 Laporan</h3>`;
+  if (!sdh.length) h += `<div class="tugas-item">Belum ada laporan.</div>`;
+  sdh.forEach(t => {
+    const a = (t.audit || []).map(x => `${x.vonis === 'lulus' ? '✅' : '❌'} ${x.vonis}`).join(', ');
+    h += `<div class="laporan"><b>${t.id}</b> · ${esc(potong(t.judul, 50))}<br>
+      <span class="lap-isi">📝 ${esc(t.hasil || '(tanpa laporan tertulis)')}</span><br>
+      <span style="font-size:12px">${a || '⏳ belum diaudit'}</span>
+      <div class="tombol">
         <button class="b-lulus mini" onclick="auditModal('${t.id}','lulus')">Lulus</button>
-        <button class="b-gagal mini" onclick="auditModal('${t.id}','gagal')">Gagal</button></div>`;
-    });
-    h += `</div>`;
-  }
-  const riw = (d.tugas || []).slice(-5).reverse();
-  h += `<div class="riwayat"><b>Riwayat tugas:</b>` +
-       riw.map(t => `<div class="ritem"><span>${t.id} [${t.status}] ${esc(t.judul.slice(0, 45))}</span></div>`).join('') + `</div>`;
+        <button class="b-gagal mini" onclick="auditModal('${t.id}','gagal')">Gagal</button>
+      </div></div>`;
+  });
   const aktif = (d.skill || []).filter(s => s.status === 'aktif');
   h += `<div class="riwayat"><b>Skill aktif (${aktif.length}):</b> ` +
        esc(aktif.slice(0, 8).map(s => s.nama).join(', ')) + `</div>`;
@@ -465,32 +581,38 @@ async function bukaModal(nama) {
   m.innerHTML = h;
   bukaSheet('agen-sheet');
 }
-async function aksiModal(id, aksi) {
+async function aksiModal(id, aksi, oleh) {
   const body = { aksi, id };
+  if (aksi === 'ambil') body.oleh = oleh;
   if (aksi === 'beri') {
     const v = document.getElementById('m-beri').value.trim();
     if (!v) return alert('Tulis bantuannya dulu.');
     body.isi = v;
   }
   if (aksi === 'selesai') {
-    const v = prompt('Ringkasan hasil:'); if (v === null) return;
+    const v = prompt('Laporan hasil (wajib dilapor!):'); if (v === null) return;
+    if (!v.trim()) return alert('Tulis laporannya — agen wajib melapor.');
     body.hasil = v;
   }
   if (aksi === 'tunda') {
     const v = prompt('Alasan penundaan:'); if (v === null) return;
     body.alasan = v;
   }
-  await api('/api/aksi', 'POST', body);
-  tutupSheets(); muatStatus();
+  const d = await api('/api/aksi', 'POST', body);
+  if (d.error) return alert(d.error);
+  tutupSheets(); SIG = ''; muatStatus();
 }
 async function auditModal(id, vonis) {
   const c = vonis === 'gagal' ? prompt('Catatan perbaikan wajib:') : prompt('Catatan (opsional):');
   if (c === null) return;
   await api('/api/aksi', 'POST', { aksi: 'audit', id, vonis, catatan: c });
-  tutupSheets(); muatStatus();
+  tutupSheets(); SIG = ''; muatStatus();
 }
 
 /* ---------- chat ---------- */
+function sigChat(log, butuh) {
+  return JSON.stringify((log || []).slice(-8)) + '|' + JSON.stringify(butuh || []);
+}
 function gambarChat(log, butuh) {
   const el = document.getElementById('chat');
   let h = '';
@@ -502,24 +624,27 @@ function gambarChat(log, butuh) {
   });
   (log || []).forEach(m => {
     h += `<div class="msg ${m.dari === 'user' ? 'user' : ''}">
-          <div class="dari">${m.dari === 'user' ? '🧑 Kamu' : '🤖 Komandan'} · ${esc(m.pada || '')}</div>
-          ${esc(m.teks)}</div>`;
+      <div class="dari">${m.dari === 'user' ? '🧑 Kamu' : '🤖 Komandan'} · ${esc(m.pada || '')}</div>
+      ${esc(m.teks)}</div>`;
   });
   el.innerHTML = h;
   el.scrollTop = el.scrollHeight;
-  BUTUH_N = (butuh || []).length;
-  const bar = document.getElementById('chatbar');
-  bar.classList.toggle('ada-butuh', BUTUH_N > 0);
-  document.getElementById('cbadge').textContent = BUTUH_N + ' butuh bantuan';
+  const n = (butuh || []).length;
+  document.getElementById('chatbar').classList.toggle('ada-butuh', n > 0);
+  document.getElementById('cbadge').textContent = n + ' butuh bantuan';
 }
 async function muatChat() {
-  try { const d = await api('/api/chat'); gambarChat(d.chat, d.butuh); } catch(e) {}
+  try {
+    const d = await api('/api/chat');
+    const s = sigChat(d.chat, d.butuh);
+    if (s !== SIG_CHAT) { SIG_CHAT = s; gambarChat(d.chat, d.butuh); }
+  } catch (e) {}
 }
 async function jawabButuh(id) {
   const v = document.getElementById('butuh-' + id).value.trim();
   if (!v) return alert('Tulis jawabannya dulu.');
   await api('/api/aksi', 'POST', { aksi: 'beri', id, isi: v });
-  muatChat(); muatStatus();
+  SIG_CHAT = ''; muatChat(); SIG = ''; muatStatus();
 }
 document.getElementById('chat-form').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -527,7 +652,7 @@ document.getElementById('chat-form').addEventListener('submit', async (e) => {
   const v = inp.value.trim(); if (!v) return;
   inp.value = '';
   await api('/api/chat', 'POST', { teks: v });
-  muatChat(); muatStatus();
+  SIG_CHAT = ''; muatChat(); SIG = ''; muatStatus();
 });
 
 /* ---------- tugas baru ---------- */
@@ -540,8 +665,8 @@ document.getElementById('b-tugas').addEventListener('click', async () => {
   const d = await api('/api/tugas', 'POST', body);
   document.getElementById('f-judul').value = '';
   tutupSheets();
-  alert(d.ok ? `Tugas dibuat untuk ${d.untuk} ✅` : ('Gagal: ' + (d.error || d.keluaran)));
-  muatStatus();
+  alert(d.ok ? `Tugas dibuat untuk ${d.untuk} ✅ — dia langsung masuk kantor.` : ('Gagal: ' + (d.error || d.keluaran)));
+  SIG = ''; muatStatus();
 });
 
 /* ---------- browser tim ---------- */
@@ -549,8 +674,7 @@ let B_TIMER = null, B_TUGAS_ID = null;
 async function bukaBrowser(taskId) {
   B_TUGAS_ID = taskId || null;
   document.getElementById('browser-view').style.display = 'flex';
-  tutupSheets();
-  bStatus();
+  tutupSheets(); bStatus();
   const img = document.getElementById('b-layar');
   const segarkan = () => { img.src = '/api/browser/layar?t=' + Date.now(); };
   segarkan();
@@ -566,7 +690,7 @@ async function bStatus() {
     const d = await api('/api/browser/status');
     document.getElementById('b-status').textContent = d.url ? ('🌐 ' + d.url) : 'browser siap';
     if (d.url) document.getElementById('b-url').value = d.url;
-  } catch(e) { document.getElementById('b-status').textContent = '⚠️ gagal terhubung'; }
+  } catch (e) { document.getElementById('b-status').textContent = '⚠️ gagal terhubung'; }
 }
 async function bAksi(aksi, arg) {
   const body = { aksi };
@@ -601,7 +725,7 @@ async function bSelesai() {
   if (v === null) return;
   await api('/api/aksi', 'POST', { aksi: 'beri', id: bid, isi: v || 'selesai via browser' });
   B_TUGAS_ID = null;
-  tutupBrowser(); muatChat(); muatStatus();
+  tutupBrowser(); SIG_CHAT = ''; muatChat(); SIG = ''; muatStatus();
 }
 
 /* ---------- loop ---------- */
