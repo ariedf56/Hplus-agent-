@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>🏢 Kantor hplus</title>
+<link rel="stylesheet" href="office-bg.css">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   :root {
@@ -69,8 +70,8 @@
     scrollbar-width: thin; }
   .diorama { position: relative; width: 720px; max-width: none;
     aspect-ratio: 1568 / 656; }
-  .office-bg { position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; border-radius: 16px; }
+  .office-bg { position: absolute; inset: 0; background-size: cover;
+    background-position: center; border-radius: 16px; }
   .geser-hint { text-align: center; font-size: 11px; color: var(--mut);
     padding: 8px 0 2px; position: relative; }
   /* robot karakter agen */
@@ -574,7 +575,7 @@ function gambar() {
     } else {
       st.innerHTML = judul_html +
         `<div class="diorama-wrap"><div class="diorama">` +
-        `<img class="office-bg" src="office-bg.jpg" alt="Kantor hplus">` +
+        `<div class="office-bg"></div>` +
         diKantor.map((a, i) => charHTML(a, i)).join('') +
         `</div></div><div class="geser-hint">← geser untuk jelajah kantor →</div>`;
     }
