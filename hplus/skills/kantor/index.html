@@ -29,6 +29,9 @@
     animation: pulse-dot 1.6s ease-out infinite; }
   @keyframes pulse-dot { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)} 70%{box-shadow:0 0 0 7px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
   .jam { margin-left: auto; font-size: 12px; color: var(--mut); font-variant-numeric: tabular-nums; }
+  #b-papan { border: 1px solid var(--line); background: var(--card); color: var(--txt);
+    border-radius: 10px; padding: 6px 10px; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .llm-hint { font-size: 10.5px; color: var(--mut); padding: 0 16px 8px; }
   .tabs { display: flex; gap: 8px; padding: 10px 14px 4px; overflow-x: auto; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
   .tabs button { flex: 1 0 auto; border: 1px solid var(--line); background: var(--card);
@@ -229,7 +232,8 @@
   #chat { flex: 1; overflow-y: auto; padding: 4px 16px 12px; display: flex;
     flex-direction: column; gap: 8px; }
   .msg { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 9px 12px; font-size: 13.5px; line-height: 1.45; max-width: 92%; }
+    padding: 9px 12px; font-size: 13.5px; line-height: 1.45; max-width: 92%;
+    white-space: pre-line; }
   .msg .dari { font-size: 11px; color: var(--mut); margin-bottom: 3px; font-weight: 600; }
   .msg.user { align-self: flex-end; border-color: var(--acc); background: #0e2a44; }
   .kartu-butuh { background: #2b1a05; border: 1px solid var(--butuh); border-radius: 12px;
@@ -310,6 +314,7 @@
 <header>
   <h1>🏢 Kantor hplus</h1>
   <span class="live"><i></i>LIVE</span>
+  <button id="b-papan" title="Daftar tugas">📋 Tugas</button>
   <span class="jam" id="jam">--:--:--</span>
 </header>
 <div class="tabs" id="tabs">
@@ -325,6 +330,7 @@
 <div id="chatsheet">
   <div class="sheet-handle" id="chat-handle"><i></i></div>
   <div class="sheet-judul">💬 Chat tim</div>
+  <div class="llm-hint">Agen menjawab dari data papan. Coba: "status tim", "daftar tugas", "laporan".</div>
   <div id="chat"></div>
   <form id="chat-form">
     <input id="chat-input" placeholder="Tulis perintah / pesan..." autocomplete="off">
@@ -362,6 +368,12 @@
   <div class="sheet-handle" data-tutup="agen-sheet"><i></i></div>
   <div class="sheet-body" id="agen-body"></div>
 </div>
+<div class="sheet" id="papan-sheet">
+  <div class="sheet-handle" data-tutup="papan-sheet"><i></i></div>
+  <div class="sheet-body"><h2>📋 Daftar tugas</h2>
+    <div class="peran">Semua tugas di papan — ketuk untuk buka agennya.</div>
+    <div id="papan-list"></div></div>
+</div>
 <div id="browser-view">
   <div id="browser-bar">
     <b>🖥️ Browser Tim</b>
@@ -382,6 +394,7 @@
 <script>
 let TAB = 'kantor';
 let AGEN = [];
+let AGEN_MAP = {};
 let STATE_LAMA = {};
 let SIG = '', SIG_CHAT = '';
 
@@ -515,11 +528,40 @@ function gambar() {
 async function muatStatus() {
   try {
     const d = await api('/api/status');
+    AGEN_MAP = {};
+    (d.agen || []).forEach(a => AGEN_MAP[a.nama] = a);
     const s = (d.agen || []).map(a => a.nama + ':' + a.state + ':' +
       JSON.stringify(a.tugas_semua || []) + ':' + (a.dengan || '')).join('|');
     if (s !== SIG) { SIG = s; AGEN = d.agen || []; gambar(); }
   } catch (e) {}
 }
+
+/* ---------- daftar tugas ---------- */
+async function muatPapan() {
+  try {
+    const d = await api('/api/papan');
+    const tugas = (d.tugas || []).slice().reverse();
+    const grup = { jalan: [], antri: [], selesai: [], tunda: [] };
+    tugas.forEach(t => (grup[t.status] || grup.antri).push(t));
+    const NAMA_ST = { jalan: '🔨 Sedang dikerjakan', antri: '⏳ Antri',
+                      selesai: '✅ Selesai', tunda: '⏸️ Ditunda' };
+    let h = '';
+    ['jalan', 'antri', 'tunda', 'selesai'].forEach(st => {
+      const daftar = st === 'selesai' ? grup[st].slice(0, 8) : grup[st];
+      if (!daftar.length) return;
+      h += `<h3>${NAMA_ST[st]} (${daftar.length})</h3>`;
+      daftar.forEach(t => {
+        const a = AGEN_MAP[t.untuk];
+        h += `<div class="tugas-item" onclick="tutupSheets();bukaModal('${t.untuk}')">
+          <div class="ti-judul"><b>${t.id}</b> <span class="chip ${t.status}">${t.status}</span><br>
+          ${esc(t.judul)}<br><span style="color:var(--mut)">${a ? a.avatar + ' ' + esc(a.tampil) : esc(t.untuk)} · ${esc(t.prioritas || '')}</span></div>
+        </div>`;
+      });
+    });
+    document.getElementById('papan-list').innerHTML = h || '<div class="tugas-item">📋 Papan kosong.</div>';
+  } catch (e) {}
+}
+document.getElementById('b-papan').onclick = () => { muatPapan(); bukaSheet('papan-sheet'); };
 
 /* ---------- sheets ---------- */
 const scrim = document.getElementById('scrim');
@@ -613,6 +655,12 @@ async function auditModal(id, vonis) {
 function sigChat(log, butuh) {
   return JSON.stringify((log || []).slice(-8)) + '|' + JSON.stringify(butuh || []);
 }
+function pengirim(dari) {
+  if (dari === 'user') return '🧑 Kamu';
+  if (dari === 'komandan') return '🤖 Komandan';
+  const a = AGEN_MAP[dari];
+  return a ? `${a.avatar} ${esc(a.tampil)}` : '🤖 ' + esc(dari);
+}
 function gambarChat(log, butuh) {
   const el = document.getElementById('chat');
   let h = '';
@@ -624,7 +672,7 @@ function gambarChat(log, butuh) {
   });
   (log || []).forEach(m => {
     h += `<div class="msg ${m.dari === 'user' ? 'user' : ''}">
-      <div class="dari">${m.dari === 'user' ? '🧑 Kamu' : '🤖 Komandan'} · ${esc(m.pada || '')}</div>
+      <div class="dari">${pengirim(m.dari)} · ${esc(m.pada || '')}</div>
       ${esc(m.teks)}</div>`;
   });
   el.innerHTML = h;

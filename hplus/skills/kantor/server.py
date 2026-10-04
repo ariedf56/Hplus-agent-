@@ -43,6 +43,102 @@ AGEN_ORDER = ["nara", "koda", "vera", "raka", "tara", "saka", "ari"]
 # WAJIB diisi sebelum link dibuka ke publik!
 KANTOR_PASSWORD = os.environ.get("KANTOR_PASSWORD", "")
 
+# --- LLM opsional: bikin agen bisa menjawab langsung di chat ---
+# Isi HPLUS_LLM_KEY di Termux (export, JANGAN di chat) untuk jawaban AI penuh.
+# Tanpa key: agen menjawab dari data papan (status/antrian/laporan) — tetap nyata.
+LLM_KEY = os.environ.get("HPLUS_LLM_KEY", "")
+LLM_MODEL = os.environ.get("HPLUS_LLM_MODEL", "gpt-4o-mini")
+LLM_URL = os.environ.get("HPLUS_LLM_URL", "https://api.openai.com/v1/chat/completions")
+
+
+def _sekarang():
+    return datetime.now().strftime("%H:%M")
+
+
+def balas_deterministik(tl, data):
+    """Jawab pertanyaan seputar papan langsung dari data.
+    Kembalikan (dari, teks) atau None bila tidak cocok pola."""
+    tugas = data["tugas"]
+    belum = [t for t in tugas if t["status"] != "selesai"]
+    if any(k in tl for k in ("status tim", "siapa kerja", "siapa yang kerja",
+                             "lagi ngapain", "lagi apa")):
+        states = state_agen()
+        kerja = [h for h in states if h["state"] == "kerja"]
+        butuh = [h for h in states if h["state"] == "butuh"]
+        santai = [h for h in states if h["state"] not in ("kerja", "butuh")]
+        baris = []
+        if kerja:
+            baris.append("🔨 Kerja: " + ", ".join(h["tampil"] for h in kerja))
+        if butuh:
+            baris.append("🙋 Butuh bantuan: " + ", ".join(h["tampil"] for h in butuh))
+        if santai:
+            baris.append("💤 Santai: " + ", ".join(h["tampil"] for h in santai))
+        return ("komandan", "\n".join(baris) if baris else "Tim kosong?")
+    if "daftar tugas" in tl or "list tugas" in tl or tl.strip() == "tugas":
+        if not belum:
+            return ("komandan", "📋 Tidak ada tugas — papan bersih! 🎉")
+        baris = ["📋 Daftar tugas:"]
+        for t in belum[-15:]:
+            info = muat_agen(t["untuk"])
+            baris.append(f"{t['id']} [{t['status']}] {t['judul']} — {info['tampil']}")
+        return ("komandan", "\n".join(baris))
+    if "laporan" in tl:
+        sdh = [t for t in tugas if t["status"] == "selesai" and t.get("hasil")]
+        if not sdh:
+            return ("komandan", "📣 Belum ada laporan.")
+        t = sdh[-1]
+        info = muat_agen(t["untuk"])
+        return ("komandan",
+                f"📣 Laporan terakhir ({t['id']}, {info['tampil']}):\n{t['hasil'][:400]}")
+    return None
+
+
+def akuisisi_agen(agen, judul):
+    """Balasan agen saat menerima tugas: data antrian nyata."""
+    data = tim.baca()
+    n = len([t for t in data["tugas"]
+             if t["untuk"] == agen and t["status"] in ("antri", "jalan")])
+    return (agen, f"Siap! Saya kerjakan: {judul}\nAntrian saya sekarang {n} tugas. "
+                  f"Pantau saya di kantor ya 👀")
+
+
+def tanya_llm(nama, teks_pertanyaan):
+    """Tanya LLM sebagai agen (persona dari peran/<nama>.md).
+    Kembalikan teks jawaban atau None (tanpa key / gagal)."""
+    if not LLM_KEY:
+        return None
+    import urllib.request
+    pf = os.path.realpath(os.path.join(DASAR, "..", "tim", "peran", f"{nama}.md"))
+    persona = ""
+    if os.path.isfile(pf):
+        with open(pf, encoding="utf-8") as f:
+            persona = f.read(2000)
+    info = muat_agen(nama)
+    data = tim.baca()
+    tugasku = [t for t in data["tugas"]
+               if t["untuk"] == nama and t["status"] != "selesai"][-5]
+    konteks = "\n".join(f"- {t['id']} [{t['status']}] {t['judul']}" for t in tugasku)
+    system = (f"Kamu {info['tampil']}, {info['peran']} di tim hplus. "
+              f"Jawab singkat (maks 3 kalimat), bahasa Indonesia santai, "
+              f"sebagai dirimu.\nTugasmu saat ini:\n{konteks or '(tidak ada)'}"
+              f"\n\nPeranmu:\n{persona[:1200]}")
+    body = json.dumps({
+        "model": LLM_MODEL,
+        "messages": [{"role": "system", "content": system},
+                     {"role": "user", "content": teks_pertanyaan}],
+        "max_tokens": 300, "temperature": 0.7,
+    }).encode()
+    try:
+        req = urllib.request.Request(
+            LLM_URL, data=body, method="POST",
+            headers={"Content-Type": "application/json",
+                     "Authorization": f"Bearer {LLM_KEY}"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            d = json.load(r)
+        return d["choices"][0]["message"]["content"].strip()
+    except Exception:
+        return None
+
 
 def muat_agen(nama):
     p = os.path.join(DASAR, "..", "tim", "agen", f"{nama}.json")
@@ -342,26 +438,38 @@ class Handler(BaseHTTPRequestHandler):
             if not teks:
                 return self._json({"error": "pesan kosong"}, 400)
             log = muat_chat()
-            log.append({"dari": "user", "teks": teks,
-                        "pada": datetime.now().strftime("%H:%M")})
-            agen = rute_otomatis(teks)
-            if agen:
-                ns = SimpleNamespace(judul=teks, untuk=agen,
-                                     prioritas="sedang",
-                                     detail="Dari chat web Kantor hplus.")
-                import io, contextlib
-                with contextlib.redirect_stdout(io.StringIO()):
-                    tim.cmd_tambah(ns)
-                info = muat_agen(agen)
-                log.append({"dari": "komandan",
-                            "teks": f"Diteruskan ke {info['tampil']} ✅",
-                            "pada": datetime.now().strftime("%H:%M")})
+            log.append({"dari": "user", "teks": teks, "pada": _sekarang()})
+            tl = teks.lower()
+            data = tim.baca()
+            det = balas_deterministik(tl, data)
+            agen = None
+            if det:
+                log.append({"dari": det[0], "teks": det[1], "pada": _sekarang()})
             else:
-                log.append({"dari": "komandan",
-                            "teks": "Diterima — saya tangani langsung.",
-                            "pada": datetime.now().strftime("%H:%M")})
+                agen = rute_otomatis(teks)
+                if agen:
+                    ns = SimpleNamespace(judul=teks, untuk=agen,
+                                         prioritas="sedang",
+                                         detail="Dari chat web Kantor hplus.")
+                    import io, contextlib
+                    with contextlib.redirect_stdout(io.StringIO()):
+                        tim.cmd_tambah(ns)
+                    # agen menjawab: coba LLM dulu, fallback ke data antrian
+                    jwb = tanya_llm(agen, teks)
+                    if jwb:
+                        log.append({"dari": agen, "teks": jwb,
+                                    "pada": _sekarang()})
+                    else:
+                        d2 = akuisisi_agen(agen, teks)
+                        log.append({"dari": d2[0], "teks": d2[1],
+                                    "pada": _sekarang()})
+                else:
+                    log.append({"dari": "komandan",
+                                "teks": "Diterima — saya tangani langsung.",
+                                "pada": _sekarang()})
             simpan_chat(log)
-            return self._json({"ok": True, "rute": agen})
+            return self._json({"ok": True, "rute": agen,
+                               "llm": bool(LLM_KEY)})
         if rute == "/api/browser/aksi":
             kode, ct, badan = daemon_proxy("/aksi", "POST", body)
             return self._kirim(kode, ct, badan)
