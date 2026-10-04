@@ -382,6 +382,8 @@ class Handler(BaseHTTPRequestHandler):
             tipe = "text/html" if nama.endswith(".html") else \
                    "application/javascript" if nama.endswith(".js") else \
                    "text/css" if nama.endswith(".css") else \
+                   "image/png" if nama.endswith(".png") else \
+                   "image/jpeg" if nama.endswith((".jpg", ".jpeg")) else \
                    "application/octet-stream"
         with open(aman, "rb") as f:
             badan = f.read()
