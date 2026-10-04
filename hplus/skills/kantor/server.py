@@ -38,6 +38,11 @@ from rute import skor_rute, AMBANG_TUNGGAL, AMBANG_BATCH  # noqa: E402
 CHAT = os.path.join(DASAR, "chat.json")
 AGEN_ORDER = ["nara", "koda", "vera", "raka", "tara", "saka", "ari"]
 
+# Password opsional (env KANTOR_PASSWORD atau file ~/.kantor-password dibaca
+# oleh script Termux). Kalau di-set, SEMUA route wajib HTTP Basic Auth.
+# WAJIB diisi sebelum link dibuka ke publik!
+KANTOR_PASSWORD = os.environ.get("KANTOR_PASSWORD", "")
+
 
 def muat_agen(nama):
     p = os.path.join(DASAR, "..", "tim", "agen", f"{nama}.json")
@@ -163,6 +168,30 @@ def daemon_proxy(path, method="GET", body=None, mentah=False):
 class Handler(BaseHTTPRequestHandler):
     server_version = "KantorHplus/1.0"
 
+    def _auth_ok(self):
+        """Wajib lolos bila KANTOR_PASSWORD di-set."""
+        if not KANTOR_PASSWORD:
+            return True
+        import base64
+        import hmac
+        auth = self.headers.get("Authorization", "")
+        if auth.startswith("Basic "):
+            try:
+                decoded = base64.b64decode(auth[6:].strip()).decode("utf-8", "replace")
+                _, _, pw = decoded.partition(":")
+                if hmac.compare_digest(pw, KANTOR_PASSWORD):
+                    return True
+            except Exception:
+                pass
+        badan = b"butuh password"
+        self.send_response(401)
+        self.send_header("WWW-Authenticate", 'Basic realm="Kantor hplus"')
+        self.send_header("Content-Type", "text/plain")
+        self.send_header("Content-Length", str(len(badan)))
+        self.end_headers()
+        self.wfile.write(badan)
+        return False
+
     def _json(self, obj, kode=200):
         badan = json.dumps(obj, ensure_ascii=False).encode()
         self.send_response(kode)
@@ -182,6 +211,8 @@ class Handler(BaseHTTPRequestHandler):
 
     # ---------- GET ----------
     def do_GET(self):
+        if not self._auth_ok():
+            return
         rute = urllib.parse.urlparse(self.path).path
         if rute in ("/", "/index.html"):
             return self._file("index.html", "text/html")
@@ -252,6 +283,8 @@ class Handler(BaseHTTPRequestHandler):
 
     # ---------- POST ----------
     def do_POST(self):
+        if not self._auth_ok():
+            return
         rute = urllib.parse.urlparse(self.path).path
         body = self._baca_body()
         if rute == "/api/tugas":
