@@ -116,7 +116,7 @@ def tanya_llm(nama, teks_pertanyaan):
     info = muat_agen(nama)
     data = tim.baca()
     tugasku = [t for t in data["tugas"]
-               if t["untuk"] == nama and t["status"] != "selesai"][-5]
+               if t["untuk"] == nama and t["status"] != "selesai"][-5:]
     konteks = "\n".join(f"- {t['id']} [{t['status']}] {t['judul']}" for t in tugasku)
     system = (f"Kamu {info['tampil']}, {info['peran']} di tim hplus. "
               f"Jawab singkat (maks 3 kalimat), bahasa Indonesia santai, "
