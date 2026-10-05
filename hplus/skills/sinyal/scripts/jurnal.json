@@ -907,5 +907,2273 @@
     "harga": 4162.2998046875,
     "regime": "TRANSITION",
     "alasan": "Directional evidence belum cukup (score=-20.2)"
+  },
+  {
+    "waktu": "2026-10-03T20:10:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84881.02,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-03T20:10:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1994,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.3)"
+  },
+  {
+    "waktu": "2026-10-03T20:25:52",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84889.16,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-03T20:26:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1996,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.3)"
+  },
+  {
+    "waktu": "2026-10-03T20:40:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84867.8,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-03T20:40:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1999,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.4)"
+  },
+  {
+    "waktu": "2026-10-03T20:55:47",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0922,
+    "harga": 84746.01,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=6.6)"
+  },
+  {
+    "waktu": "2026-10-03T20:55:54",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2001,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.5)"
+  },
+  {
+    "waktu": "2026-10-03T21:10:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.1109,
+    "harga": 84624.01,
+    "regime": "TRENDING",
+    "alasan": "Directional evidence belum cukup (score=11.2)"
+  },
+  {
+    "waktu": "2026-10-03T21:11:04",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2004,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.6)"
+  },
+  {
+    "waktu": "2026-10-03T21:25:55",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.2307,
+    "harga": 84720.55,
+    "regime": "NORMAL",
+    "alasan": "Directional evidence belum cukup (score=29.2)"
+  },
+  {
+    "waktu": "2026-10-03T21:26:02",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1995,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.3)"
+  },
+  {
+    "waktu": "2026-10-03T21:40:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.1578,
+    "harga": 84698.0,
+    "regime": "NORMAL",
+    "alasan": "Directional evidence belum cukup (score=19.1)"
+  },
+  {
+    "waktu": "2026-10-03T21:40:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1997,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.3)"
+  },
+  {
+    "waktu": "2026-10-03T21:55:56",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.3123,
+    "harga": 84710.01,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=41.9)"
+  },
+  {
+    "waktu": "2026-10-03T21:56:05",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-03T22:10:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-03T22:11:01",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84764.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-03T22:25:48",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-03T22:25:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84772.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-03T22:40:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.2701,
+    "harga": 84792.01,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=34.9)"
+  },
+  {
+    "waktu": "2026-10-03T22:41:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-03T22:55:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.123,
+    "harga": 84784.01,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=13.2)"
+  },
+  {
+    "waktu": "2026-10-03T22:55:56",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-03T23:10:54",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84760.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-03T23:11:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-03T23:25:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84815.3,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-03T23:25:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2012,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.8)"
+  },
+  {
+    "waktu": "2026-10-03T23:40:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.3072,
+    "harga": 84791.69,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=41.0)"
+  },
+  {
+    "waktu": "2026-10-03T23:41:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2014,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.8)"
+  },
+  {
+    "waktu": "2026-10-03T23:55:46",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2016,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.9)"
+  },
+  {
+    "waktu": "2026-10-03T23:55:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0964,
+    "harga": 84725.96,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-4.2)"
+  },
+  {
+    "waktu": "2026-10-04T00:10:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84811.27,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T00:11:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1768,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-17.6)"
+  },
+  {
+    "waktu": "2026-10-04T00:25:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84871.33,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T00:25:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.177,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-17.6)"
+  },
+  {
+    "waktu": "2026-10-04T00:40:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.2475,
+    "harga": 84806.01,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=31.7)"
+  },
+  {
+    "waktu": "2026-10-04T00:41:02",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1772,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-17.7)"
+  },
+  {
+    "waktu": "2026-10-04T00:55:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5189,
+    "harga": 84789.81,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.52)"
+  },
+  {
+    "waktu": "2026-10-04T00:55:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1774,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-17.7)"
+  },
+  {
+    "waktu": "2026-10-04T01:10:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84809.2,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T01:10:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1776,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-17.8)"
+  },
+  {
+    "waktu": "2026-10-04T01:25:47",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1777,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-17.8)"
+  },
+  {
+    "waktu": "2026-10-04T01:25:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84737.97,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T01:40:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84774.86,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T01:40:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.178,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-17.9)"
+  },
+  {
+    "waktu": "2026-10-04T01:55:50",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.5856,
+    "harga": 84807.98,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=68.3 | Agreement=0.83 | Conflict=0.17 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.59"
+  },
+  {
+    "waktu": "2026-10-04T01:55:59",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1782,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.0)"
+  },
+  {
+    "waktu": "2026-10-04T02:10:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84827.32,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T02:10:55",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1784,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.0)"
+  },
+  {
+    "waktu": "2026-10-04T02:25:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84838.28,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T02:25:59",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1785,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.1)"
+  },
+  {
+    "waktu": "2026-10-04T02:40:52",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.3474,
+    "harga": 84808.01,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=47.2)"
+  },
+  {
+    "waktu": "2026-10-04T02:41:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1788,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.1)"
+  },
+  {
+    "waktu": "2026-10-04T02:55:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.2941,
+    "harga": 84804.02,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=40.7)"
+  },
+  {
+    "waktu": "2026-10-04T02:55:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.179,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.2)"
+  },
+  {
+    "waktu": "2026-10-04T03:10:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84802.17,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T03:11:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1792,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.2)"
+  },
+  {
+    "waktu": "2026-10-04T03:25:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84825.48,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T03:25:59",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1794,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.3)"
+  },
+  {
+    "waktu": "2026-10-04T03:40:52",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7467,
+    "harga": 84880.77,
+    "regime": "TRANSITION",
+    "alasan": "Direction score=93.3 | Agreement=1.00 | Conflict=0.00 | Regime=TRANSITION | Timing=WAIT_PULLBACK | Confidence=0.75"
+  },
+  {
+    "waktu": "2026-10-04T03:41:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1796,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.4)"
+  },
+  {
+    "waktu": "2026-10-04T03:55:49",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1798,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-18.4)"
+  },
+  {
+    "waktu": "2026-10-04T03:55:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.3545,
+    "harga": 84848.01,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=48.7)"
+  },
+  {
+    "waktu": "2026-10-04T04:10:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84823.68,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T04:10:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1869,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-19.6)"
+  },
+  {
+    "waktu": "2026-10-04T04:25:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84812.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T04:25:59",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.187,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-19.6)"
+  },
+  {
+    "waktu": "2026-10-04T04:40:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84812.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T04:41:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1873,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-19.7)"
+  },
+  {
+    "waktu": "2026-10-04T04:55:54",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84812.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T04:56:02",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1875,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-19.8)"
+  },
+  {
+    "waktu": "2026-10-04T05:10:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84835.15,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T05:10:55",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1877,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-19.8)"
+  },
+  {
+    "waktu": "2026-10-04T05:25:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84866.33,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T05:26:04",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1879,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-19.9)"
+  },
+  {
+    "waktu": "2026-10-04T05:40:47",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1881,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-19.9)"
+  },
+  {
+    "waktu": "2026-10-04T05:40:51",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7377,
+    "harga": 84901.2,
+    "regime": "TRENDING",
+    "alasan": "Direction score=90.8 | Agreement=1.00 | Conflict=0.00 | Regime=TRENDING | Timing=WAIT_PULLBACK | Confidence=0.74"
+  },
+  {
+    "waktu": "2026-10-04T05:41:07",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7378,
+    "harga": 84901.21,
+    "regime": "TRENDING",
+    "alasan": "Direction score=90.8 | Agreement=1.00 | Conflict=0.00 | Regime=TRENDING | Timing=WAIT_PULLBACK | Confidence=0.74"
+  },
+  {
+    "waktu": "2026-10-04T05:55:47",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7379,
+    "harga": 84924.53,
+    "regime": "TRENDING",
+    "alasan": "Direction score=90.8 | Agreement=1.00 | Conflict=0.00 | Regime=TRENDING | Timing=WAIT_PULLBACK | Confidence=0.74"
+  },
+  {
+    "waktu": "2026-10-04T05:55:55",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1883,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.0)"
+  },
+  {
+    "waktu": "2026-10-04T06:10:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84922.49,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T06:10:59",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1885,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.1)"
+  },
+  {
+    "waktu": "2026-10-04T06:25:46",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1887,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.1)"
+  },
+  {
+    "waktu": "2026-10-04T06:25:48",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.749,
+    "harga": 84942.0,
+    "regime": "NORMAL",
+    "alasan": "Direction score=94.0 | Agreement=1.00 | Conflict=0.00 | Regime=NORMAL | Timing=WAIT_PULLBACK | Confidence=0.75"
+  },
+  {
+    "waktu": "2026-10-04T06:40:48",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1889,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.2)"
+  },
+  {
+    "waktu": "2026-10-04T06:40:50",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7477,
+    "harga": 84980.0,
+    "regime": "NORMAL",
+    "alasan": "Direction score=93.6 | Agreement=1.00 | Conflict=0.00 | Regime=NORMAL | Timing=WAIT_PULLBACK | Confidence=0.75"
+  },
+  {
+    "waktu": "2026-10-04T06:55:50",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1891,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-20.2)"
+  },
+  {
+    "waktu": "2026-10-04T06:55:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5602,
+    "harga": 85058.01,
+    "regime": "NORMAL",
+    "alasan": "Confidence belum memenuhi threshold (0.56)"
+  },
+  {
+    "waktu": "2026-10-04T07:10:45",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2411,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T07:10:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85013.99,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T07:25:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84996.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T07:26:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2404,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.9)"
+  },
+  {
+    "waktu": "2026-10-04T07:40:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 84957.49,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T07:40:55",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2406,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.9)"
+  },
+  {
+    "waktu": "2026-10-04T07:55:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.4786,
+    "harga": 85035.94,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.48)"
+  },
+  {
+    "waktu": "2026-10-04T07:56:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2407,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.0)"
+  },
+  {
+    "waktu": "2026-10-04T08:10:48",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2408,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.0)"
+  },
+  {
+    "waktu": "2026-10-04T08:10:52",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85150.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T08:25:45",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2409,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.0)"
+  },
+  {
+    "waktu": "2026-10-04T08:25:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85152.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T08:40:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.2609,
+    "harga": 85055.69,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=36.4)"
+  },
+  {
+    "waktu": "2026-10-04T08:40:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.241,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T08:55:44",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2411,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T08:55:50",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6476,
+    "harga": 85100.23,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=81.3 | Agreement=0.91 | Conflict=0.17 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.65"
+  },
+  {
+    "waktu": "2026-10-04T09:10:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85128.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T09:10:56",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2412,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T09:25:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85212.58,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T09:25:54",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2415,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.2)"
+  },
+  {
+    "waktu": "2026-10-04T09:40:45",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2417,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.2)"
+  },
+  {
+    "waktu": "2026-10-04T09:40:48",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7253,
+    "harga": 85252.01,
+    "regime": "TRANSITION",
+    "alasan": "Direction score=93.7 | Agreement=1.00 | Conflict=0.00 | Regime=TRANSITION | Timing=WAIT_PULLBACK | Confidence=0.73"
+  },
+  {
+    "waktu": "2026-10-04T09:55:50",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.585,
+    "harga": 85261.67,
+    "regime": "TRANSITION",
+    "alasan": "Direction score=71.8 | Agreement=0.77 | Conflict=0.17 | Regime=TRANSITION | Timing=WAIT_PULLBACK | Confidence=0.58"
+  },
+  {
+    "waktu": "2026-10-04T09:55:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.241,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T10:10:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85249.72,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T10:10:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.241,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T10:25:46",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2411,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T10:25:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85396.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T10:40:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5081,
+    "harga": 85306.0,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.51)"
+  },
+  {
+    "waktu": "2026-10-04T10:40:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2412,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T10:55:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5082,
+    "harga": 85334.69,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.51)"
+  },
+  {
+    "waktu": "2026-10-04T10:56:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2413,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-04T11:10:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85272.52,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T11:10:55",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2414,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.2)"
+  },
+  {
+    "waktu": "2026-10-04T11:25:48",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2415,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.2)"
+  },
+  {
+    "waktu": "2026-10-04T11:25:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85288.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T11:40:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85271.71,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T11:40:54",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2415,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.2)"
+  },
+  {
+    "waktu": "2026-10-04T11:55:49",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6945,
+    "harga": 85302.01,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=84.8 | Agreement=1.00 | Conflict=0.00 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.69"
+  },
+  {
+    "waktu": "2026-10-04T11:55:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2416,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-27.2)"
+  },
+  {
+    "waktu": "2026-10-04T12:10:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85377.68,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T12:10:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T12:26:05",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6912,
+    "harga": 85294.66,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=83.9 | Agreement=1.00 | Conflict=0.00 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.69"
+  },
+  {
+    "waktu": "2026-10-04T12:26:12",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T12:26:32",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6912,
+    "harga": 85294.67,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=83.9 | Agreement=1.00 | Conflict=0.00 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.69"
+  },
+  {
+    "waktu": "2026-10-04T12:40:47",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T12:40:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.3171,
+    "harga": 85250.74,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=44.6)"
+  },
+  {
+    "waktu": "2026-10-04T12:55:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0711,
+    "harga": 85099.0,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=2.9)"
+  },
+  {
+    "waktu": "2026-10-04T12:55:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T13:10:54",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85126.03,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T13:11:02",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T13:25:58",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85211.62,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T13:26:39",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T13:40:44",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T13:40:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.377,
+    "harga": 85250.63,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=49.9)"
+  },
+  {
+    "waktu": "2026-10-04T13:56:03",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.3572,
+    "harga": 85252.28,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=46.9)"
+  },
+  {
+    "waktu": "2026-10-04T13:56:21",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T14:10:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85196.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T14:11:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T14:25:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85170.91,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T14:25:51",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T14:40:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0808,
+    "harga": 85126.88,
+    "regime": "NORMAL",
+    "alasan": "Directional evidence belum cukup (score=5.0)"
+  },
+  {
+    "waktu": "2026-10-04T14:40:56",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T14:55:53",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6267,
+    "harga": 85245.15,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=65.5 | Agreement=1.00 | Conflict=0.00 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.63"
+  },
+  {
+    "waktu": "2026-10-04T14:56:08",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T15:10:46",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T15:10:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85267.96,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T15:25:59",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5346,
+    "harga": 85312.71,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.53)"
+  },
+  {
+    "waktu": "2026-10-04T15:26:10",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T15:40:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.26,
+    "harga": 85318.56,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=34.5)"
+  },
+  {
+    "waktu": "2026-10-04T15:40:55",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T15:55:52",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T15:55:55",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.548,
+    "harga": 85323.09,
+    "regime": "TRANSITION",
+    "alasan": "Confidence belum memenuhi threshold (0.55)"
+  },
+  {
+    "waktu": "2026-10-04T16:10:54",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85285.28,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T16:11:05",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T16:25:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85223.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T16:26:08",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T16:40:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85330.43,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T16:41:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T16:56:02",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7134,
+    "harga": 85361.85,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=90.2 | Agreement=1.00 | Conflict=0.00 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.71"
+  },
+  {
+    "waktu": "2026-10-04T16:56:14",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2944,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-35.1)"
+  },
+  {
+    "waktu": "2026-10-04T17:10:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T17:11:02",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85340.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T17:25:57",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85371.13,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T17:26:06",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T17:40:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85341.17,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T17:41:04",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T17:55:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85342.52,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T17:56:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T18:10:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T18:11:03",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85319.33,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T18:25:56",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85313.15,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T18:26:07",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T18:40:52",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85327.44,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T18:41:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T18:55:54",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T18:55:55",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85353.76,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T19:10:56",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T19:10:58",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85382.71,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T19:25:54",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85414.3,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T19:26:08",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T19:40:51",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T19:40:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5213,
+    "harga": 85455.17,
+    "regime": "NORMAL",
+    "alasan": "Confidence belum memenuhi threshold (0.52)"
+  },
+  {
+    "waktu": "2026-10-04T19:55:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.4995,
+    "harga": 85431.47,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.50)"
+  },
+  {
+    "waktu": "2026-10-04T19:56:02",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T20:10:57",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85402.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T20:11:12",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T20:26:03",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85474.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T20:26:24",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T20:41:08",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.718,
+    "harga": 85613.49,
+    "regime": "CHOPPY",
+    "alasan": "Direction score=91.6 | Agreement=1.00 | Conflict=0.00 | Regime=CHOPPY | Timing=WAIT_PULLBACK | Confidence=0.72"
+  },
+  {
+    "waktu": "2026-10-04T20:41:33",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T20:56:20",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.7273,
+    "harga": 85853.74,
+    "regime": "TRENDING",
+    "alasan": "Direction score=94.2 | Agreement=1.00 | Conflict=0.00 | Regime=TRENDING | Timing=WAIT_PULLBACK | Confidence=0.73"
+  },
+  {
+    "waktu": "2026-10-04T20:56:45",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T21:10:56",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 85886.76,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T21:11:08",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T21:25:57",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.5856,
+    "harga": 85882.12,
+    "regime": "NORMAL",
+    "alasan": "Direction score=72.1 | Agreement=0.76 | Conflict=0.17 | Regime=NORMAL | Timing=WAIT_PULLBACK | Confidence=0.59"
+  },
+  {
+    "waktu": "2026-10-04T21:26:11",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T21:40:48",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.726,
+    "harga": 85970.0,
+    "regime": "NORMAL",
+    "alasan": "Direction score=93.8 | Agreement=1.00 | Conflict=0.00 | Regime=NORMAL | Timing=WAIT_PULLBACK | Confidence=0.73"
+  },
+  {
+    "waktu": "2026-10-04T21:41:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2227,
+    "harga": 4162.2998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-26.1)"
+  },
+  {
+    "waktu": "2026-10-04T21:55:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5106,
+    "harga": 85914.38,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.51)"
+  },
+  {
+    "waktu": "2026-10-04T21:56:04",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-04T22:10:48",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6139,
+    "harga": 86206.12,
+    "regime": "TRANSITION",
+    "alasan": "Direction score=76.9 | Agreement=0.81 | Conflict=0.14 | Regime=TRANSITION | Timing=WAIT_PULLBACK | Confidence=0.61"
+  },
+  {
+    "waktu": "2026-10-04T22:10:56",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4162.2998046875,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-04T22:25:50",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6104,
+    "harga": 86472.62,
+    "regime": "TRANSITION",
+    "alasan": "Direction score=76.2 | Agreement=0.80 | Conflict=0.14 | Regime=TRANSITION | Timing=WAIT_PULLBACK | Confidence=0.61"
+  },
+  {
+    "waktu": "2026-10-04T22:25:59",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4169.7001953125,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-04T22:40:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.3197,
+    "harga": 86346.0,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=45.4)"
+  },
+  {
+    "waktu": "2026-10-04T22:40:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4170.0,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-04T22:55:48",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5143,
+    "harga": 86420.0,
+    "regime": "TRANSITION",
+    "alasan": "Confidence belum memenuhi threshold (0.51)"
+  },
+  {
+    "waktu": "2026-10-04T22:56:02",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4172.39990234375,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-04T23:10:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 86548.01,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-04T23:10:58",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4174.7001953125,
+    "regime": "-",
+    "alasan": "Session OFF_PEAK"
+  },
+  {
+    "waktu": "2026-10-04T23:25:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.503,
+    "harga": 86626.0,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.50)"
+  },
+  {
+    "waktu": "2026-10-04T23:25:59",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0658,
+    "harga": 4172.5,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=-3.0)"
+  },
+  {
+    "waktu": "2026-10-04T23:40:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.225,
+    "harga": 86504.0,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=29.1)"
+  },
+  {
+    "waktu": "2026-10-04T23:41:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.135,
+    "harga": 4173.39990234375,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=-14.7)"
+  },
+  {
+    "waktu": "2026-10-04T23:55:54",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.1957,
+    "harga": 86466.0,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=25.5)"
+  },
+  {
+    "waktu": "2026-10-04T23:56:04",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2278,
+    "harga": 4170.7001953125,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=-27.1)"
+  },
+  {
+    "waktu": "2026-10-05T00:11:00",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4174.10009765625,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-05T00:11:00",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.1977,
+    "harga": 86462.0,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=25.8)"
+  },
+  {
+    "waktu": "2026-10-05T00:25:50",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.2628,
+    "harga": 86307.22,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=32.9)"
+  },
+  {
+    "waktu": "2026-10-05T00:26:01",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4180.2001953125,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-05T00:40:55",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4183.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-05T00:40:58",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5267,
+    "harga": 86482.07,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.53)"
+  },
+  {
+    "waktu": "2026-10-05T00:55:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5523,
+    "harga": 86630.0,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.55)"
+  },
+  {
+    "waktu": "2026-10-05T00:55:57",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 4181.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-05T01:11:01",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5272,
+    "harga": 86534.0,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.53)"
+  },
+  {
+    "waktu": "2026-10-05T01:11:16",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2434,
+    "harga": 4184.2001953125,
+    "regime": "NORMAL",
+    "alasan": "Directional evidence belum cukup (score=29.2)"
+  },
+  {
+    "waktu": "2026-10-05T01:25:54",
+    "simbol": "BTCUSDT",
+    "aksi": "BUY_LIMIT",
+    "confidence": 0.6198,
+    "harga": 86877.98,
+    "regime": "TRANSITION",
+    "alasan": "Direction score=70.0 | Agreement=0.81 | Conflict=0.14 | Regime=TRANSITION | Timing=WAIT_PULLBACK | Confidence=0.62"
+  },
+  {
+    "waktu": "2026-10-05T01:26:06",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2338,
+    "harga": 4185.7998046875,
+    "regime": "TRANSITION",
+    "alasan": "Directional evidence belum cukup (score=27.7)"
+  },
+  {
+    "waktu": "2026-10-05T01:40:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.4662,
+    "harga": 86742.13,
+    "regime": "TRANSITION",
+    "alasan": "Confidence belum memenuhi threshold (0.47)"
+  },
+  {
+    "waktu": "2026-10-05T01:41:03",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2191,
+    "harga": 4183.0,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=27.7)"
+  },
+  {
+    "waktu": "2026-10-05T01:55:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.1586,
+    "harga": 86584.39,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=16.5)"
+  },
+  {
+    "waktu": "2026-10-05T01:55:56",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1556,
+    "harga": 4181.89990234375,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=17.7)"
+  },
+  {
+    "waktu": "2026-10-05T02:10:52",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1214,
+    "harga": 4188.0,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=10.4)"
+  },
+  {
+    "waktu": "2026-10-05T02:10:54",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 86712.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
+  },
+  {
+    "waktu": "2026-10-05T02:25:48",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2869,
+    "harga": 4187.60009765625,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=37.6)"
+  },
+  {
+    "waktu": "2026-10-05T02:25:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.2398,
+    "harga": 86570.43,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=31.6)"
+  },
+  {
+    "waktu": "2026-10-05T02:40:53",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.5288,
+    "harga": 86683.9,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.53)"
+  },
+  {
+    "waktu": "2026-10-05T02:41:02",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1368,
+    "harga": 4186.5,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=14.1)"
+  },
+  {
+    "waktu": "2026-10-05T02:55:46",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.1079,
+    "harga": 4182.2998046875,
+    "regime": "CHOPPY",
+    "alasan": "Directional evidence belum cukup (score=10.2)"
+  },
+  {
+    "waktu": "2026-10-05T02:55:49",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.4928,
+    "harga": 86599.91,
+    "regime": "CHOPPY",
+    "alasan": "Confidence belum memenuhi threshold (0.49)"
+  },
+  {
+    "waktu": "2026-10-05T03:10:49",
+    "simbol": "XAUUSD",
+    "aksi": "HOLD",
+    "confidence": 0.2883,
+    "harga": 4170.89990234375,
+    "regime": "TRENDING",
+    "alasan": "Directional evidence belum cukup (score=-38.6)"
+  },
+  {
+    "waktu": "2026-10-05T03:10:51",
+    "simbol": "BTCUSDT",
+    "aksi": "HOLD",
+    "confidence": 0.0,
+    "harga": 86415.0,
+    "regime": "-",
+    "alasan": "H1 mendeteksi low liquidity"
   }
 ]
