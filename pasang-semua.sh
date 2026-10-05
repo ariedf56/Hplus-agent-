@@ -27,8 +27,13 @@ else
   git clone -q https://github.com/ariedf56/Hplus-agent- hplus-agent
 fi
 
-echo "=== [3/6] pasang skills hplus ==="
+echo "=== [3/6] pasang skills hplus (aman: skills lama di-backup) ==="
 mkdir -p ~/.hermes/skills
+if [ -n "$(ls -A ~/.hermes/skills 2>/dev/null)" ]; then
+  BAKS=~/.hermes/skills.bak.$(date +%Y%m%d-%H%M%S)
+  cp -r ~/.hermes/skills "$BAKS"
+  echo "skills lama dibackup ke: $BAKS"
+fi
 cp -r hplus-agent/hplus/skills/* ~/.hermes/skills/
 echo "skills: $(ls ~/.hermes/skills | tr '\n' ' ')"
 
