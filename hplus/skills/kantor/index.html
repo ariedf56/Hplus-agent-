@@ -629,19 +629,20 @@ function gambar() {
   const daftar = TAB === 'kantor' ? diKantor : TAB === 'rumah' ? diRumah : diKafe;
   st.innerHTML = dioramaHTML(TAB, daftar);
   st.querySelectorAll('.char').forEach(el => el.onclick = () => {
-    if (Date.now() - TERAKHIR_GESER < 350) return;  // abaikan klik setelah drag
+    const w = el.closest('.diorama-wrap');
+    if (w && w._geser) return;  // abaikan klik yang sebenarnya drag
     bukaModal(el.dataset.nama);
   });
   // drag-to-scroll untuk jelajah kantor (cadangan selain scroll native)
   st.querySelectorAll('.diorama-wrap').forEach(w => {
-    let sx = 0, sl = 0, seret = false;
-    w.onpointerdown = e => { seret = true; sx = e.clientX; sl = w.scrollLeft; };
+    w.onpointerdown = e => { w._seret = true; w._geser = false; w._sx = e.clientX; w._sl = w.scrollLeft; };
     w.onpointermove = e => {
-      if (!seret) return;
-      const dx = e.clientX - sx;
-      if (Math.abs(dx) > 8) { w.scrollLeft = sl - dx; TERAKHIR_GESER = Date.now(); }
+      if (!w._seret) return;
+      const dx = e.clientX - w._sx;
+      if (Math.abs(dx) > 12) { w._geser = true; w.scrollLeft = w._sl - dx; }
     };
-    w.onpointerup = w.onpointercancel = w.onpointerleave = () => { seret = false; };
+    const akhiri = () => { w._seret = false; };
+    w.onpointerup = akhiri; w.onpointercancel = akhiri; w.onpointerleave = akhiri;
   });
   if (PUSAT_KANTOR && TAB === 'kantor') {
     PUSAT_KANTOR = false;
@@ -650,7 +651,7 @@ function gambar() {
     if (w && c) w.scrollLeft = Math.max(0, c.offsetLeft - w.clientWidth / 2 + 20);
   }
 }
-let TERAKHIR_GESER = 0, PUSAT_KANTOR = true;
+let PUSAT_KANTOR = true;
 async function muatStatus() {
   try {
     const d = await api('/api/status');
