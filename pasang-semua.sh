@@ -37,14 +37,30 @@ fi
 cp -r hplus-agent/hplus/skills/* ~/.hermes/skills/
 echo "skills: $(ls ~/.hermes/skills | tr '\n' ' ')"
 
-echo "=== [4/6] SOUL hplus (aman: yang lama di-backup) ==="
+echo "=== [4/6] SOUL hplus (merge: aturan lama tetap, hplus prioritas tertinggi) ==="
+HPLUS_SOUL=hplus-agent/hplus/SOUL.md
 if [ -f ~/.hermes/SOUL.md ]; then
   BAK=~/.hermes/SOUL.md.bak.$(date +%Y%m%d-%H%M%S)
   cp ~/.hermes/SOUL.md "$BAK"
   echo "SOUL lama dibackup ke: $BAK"
+  # hapus blok hplus lama bila ada (biar tidak dobel saat install ulang)
+  sed -i '/# >>> TAMBAHAN HPLUS/,/# <<< TAMBAHAN HPLUS/d' ~/.hermes/SOUL.md
+  {
+    echo ""
+    echo "# >>> TAMBAHAN HPLUS (digabung otomatis oleh installer hplus)"
+    echo "> Ditambahkan pada $(date +%Y-%m-%d). Jika ada aturan yang bertentangan"
+    echo "> dengan bagian di atas, maka ATURAN HPLUS yang berlaku (prioritas tertinggi)."
+    echo "> Untuk mengembalikan: hapus blok ini, atau kembalikan dari: $BAK"
+    echo ""
+    sed -n '/^## /,$p' "$HPLUS_SOUL"
+    echo ""
+    echo "# <<< TAMBAHAN HPLUS"
+  } >> ~/.hermes/SOUL.md
+  echo "hplus digabung ke SOUL lama."
+else
+  cp "$HPLUS_SOUL" ~/.hermes/SOUL.md
+  echo "SOUL hplus terpasang (baru)."
 fi
-cp hplus-agent/hplus/SOUL.md ~/.hermes/SOUL.md
-echo "SOUL hplus terpasang."
 
 echo "=== [5/6] auto-start Kantor GUI ==="
 sed -i '/# >>> hplus kantor/,/# <<< hplus kantor/d' ~/.bashrc 2>/dev/null || true
